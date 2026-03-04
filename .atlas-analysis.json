@@ -1,0 +1,89 @@
+{
+  "projectType": "saas",
+  "projectName": "Open Screen",
+  "projectDescription": "Free, open-source screen recording tool for creating stunning product demos and walkthroughs without watermarks or subscriptions.",
+  "theme": "willow",
+  "primaryColor": "#06af38",
+  "lightColor": "#066d20",
+  "darkColor": "#151515",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "installation",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "features/recording",
+              "features/editing",
+              "features/annotations",
+              "features/effects",
+              "features/export"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/creating-demos",
+              "guides/customization",
+              "guides/advanced-editing",
+              "guides/tips-and-tricks"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/keyboard-shortcuts",
+              "reference/export-formats",
+              "reference/system-requirements",
+              "reference/troubleshooting",
+              "reference/faq"
+            ]
+          },
+          {
+            "group": "Community",
+            "pages": [
+              "community/contributing",
+              "community/changelog"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Screen and application recording",
+    "Manual zoom controls with customizable depth",
+    "Video cropping and trimming",
+    "Annotations (text, arrows, images)",
+    "Motion blur effects",
+    "Custom backgrounds (wallpapers, colors, gradients)",
+    "Multiple export formats and aspect ratios",
+    "Keyboard shortcuts customization",
+    "GIF export support"
+  ],
+  "publicApiSurface": [
+    "Screen recording (full screen or specific apps)",
+    "Video editor with timeline",
+    "Zoom effects with keyframe controls",
+    "Annotation tools (text, arrows, images)",
+    "Trim and crop operations",
+    "Export settings (MP4, GIF, WebM)",
+    "Background customization",
+    "Keyboard shortcuts configuration",
+    "Project save/load (.openscreen files)"
+  ]
+}
