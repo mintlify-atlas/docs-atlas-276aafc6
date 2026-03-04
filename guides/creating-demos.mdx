@@ -1,0 +1,284 @@
+---
+title: 'Creating Product Demos'
+description: 'Best practices for creating professional product demos and walkthroughs with Open Screen'
+---
+
+Open Screen is purpose-built for creating professional product demos and walkthroughs. This guide covers proven techniques to make your demos engaging and effective.
+
+## Planning Your Demo
+
+<Steps>
+  <Step title="Define your narrative">
+    Before recording, outline the key features or workflow you want to demonstrate. A clear narrative keeps viewers engaged.
+  </Step>
+  
+  <Step title="Prepare your environment">
+    - Close unnecessary applications and browser tabs
+    - Use a clean desktop background or set a professional wallpaper
+    - Prepare demo data that looks realistic
+    - Test your workflow to ensure smooth execution
+  </Step>
+  
+  <Step title="Choose the right aspect ratio">
+    Select your aspect ratio before recording:
+    - **16:9** - Standard for YouTube, training videos, presentations
+    - **9:16** - Perfect for mobile, TikTok, Instagram Stories
+    - **1:1** - Social media posts, LinkedIn
+    - **4:3** - Classic format, good for documentation
+  </Step>
+</Steps>
+
+## Recording Techniques
+
+### Keep It Focused
+
+<Tip>
+Record shorter, focused segments rather than one long take. You can use trim regions to remove mistakes and pauses.
+</Tip>
+
+When recording:
+- Move your cursor deliberately to important UI elements
+- Pause briefly on key features - Open Screen can auto-suggest zoom regions based on cursor dwell time
+- Avoid rapid mouse movements that are hard to follow
+
+### Capture at Source Quality
+
+Always record at your screen's native resolution. Open Screen preserves source quality and lets you export at different resolutions later.
+
+## Editing Your Demo
+
+### Add Strategic Zooms
+
+Zoom regions draw attention to important details:
+
+1. Position the playhead where you want to zoom
+2. Press **Z** or click the zoom button
+3. Adjust the zoom level (1.25× to 5×) in the settings panel
+4. Drag the zoom focus point to center on the important area
+
+<Note>
+Use **Wand Sparkles** button to auto-suggest zoom regions based on where your cursor paused during recording. This feature analyzes cursor telemetry to find natural dwell points.
+</Note>
+
+**Zoom Best Practices:**
+- Use 1.5× - 2.2× for subtle emphasis
+- Use 3.5× - 5× for detailed UI elements or code
+- Keep zoom durations between 2-4 seconds
+- Avoid overlapping zoom regions
+
+### Trim Unnecessary Content
+
+Remove mistakes, pauses, and loading screens:
+
+1. Press **T** to add a trim region at the playhead
+2. Drag the edges to select the content to remove
+3. Trim regions turn red to indicate removed content
+
+<Warning>
+Trim regions cannot overlap. Plan your cuts carefully.
+</Warning>
+
+### Adjust Playback Speed
+
+Speed up repetitive actions to maintain viewer engagement:
+
+1. Press **S** to add a speed region
+2. Choose from 0.25× (slow motion) to 2× (fast forward)
+3. Use 1.5× - 2× for file uploads, data processing, or navigation
+4. Use 0.5× - 0.75× to emphasize important interactions
+
+## Adding Annotations
+
+### Text Annotations
+
+Highlight key information with text overlays:
+
+1. Press **A** to add an annotation at the playhead
+2. Choose **Text** type
+3. Customize:
+   - Font style (8 built-in fonts + custom font support)
+   - Size (12px - 128px)
+   - Color and background
+   - Bold, italic, underline
+   - Text alignment
+
+**Text Annotation Tips:**
+- Keep text concise (under 10 words)
+- Use high-contrast colors for readability
+- Position text away from important UI elements
+- Use bold font weights for better visibility
+
+<Accordion title="Working with Multiple Annotations">
+When you have overlapping annotations at the same timestamp:
+- Press **Tab** to cycle forward through annotations
+- Press **Shift+Tab** to cycle backward
+- Annotations are layered by creation order (z-index)
+</Accordion>
+
+### Arrow Annotations
+
+Direct attention with arrows:
+
+1. Add an annotation and select **Arrow** type
+2. Choose from 8 arrow directions
+3. Adjust stroke width (1-6px)
+4. Select arrow color
+5. Drag to position the arrow
+
+### Image Annotations
+
+Add logos, icons, or branded elements:
+
+1. Add an annotation and select **Image** type
+2. Upload JPG, PNG, GIF, or WebP
+3. Resize and position as needed
+
+## Background and Styling
+
+### Choose a Professional Background
+
+Open Screen includes 18 built-in wallpapers plus custom options:
+
+**Background Types:**
+- **Images** - 18 professional wallpapers included
+- **Colors** - Solid colors with 16 preset options
+- **Gradients** - 24 beautiful gradient options
+- **Custom** - Upload your own JPG images
+
+<Tip>
+For product demos, choose a background that complements your brand colors without being distracting.
+</Tip>
+
+### Apply Effects
+
+Enhance visual appeal with effects:
+
+**Shadow** (0-100%)
+- Adds depth to your video
+- Use 30-50% for subtle professionalism
+- Use 70-100% for dramatic emphasis
+
+**Background Blur**
+- Blurs the wallpaper behind your video
+- Creates a depth-of-field effect
+- Great for keeping focus on content
+
+**Motion Blur**
+- Adds realistic motion blur during fast movements
+- Makes animations smoother
+- Useful for cursor movements and scrolling
+
+**Roundness** (0-16px)
+- Rounds video corners
+- Modern, polished appearance
+- Use 8-12px for balanced look
+
+**Padding** (0-100%)
+- Controls space between video and background
+- 40-60% works well for most demos
+- Reduce for maximizing video size
+
+## Export Settings
+
+### For Product Demos
+
+**MP4 Export:**
+- **Medium (1080p)** - Best for most use cases, smaller file size
+- **High (Source)** - Use for 4K displays or archival
+- **Low (720p)** - Quick sharing, social media
+
+**GIF Export:**
+- Frame rate: 10-15 fps for file size balance
+- Size: Medium (1280px width) for documentation
+- Loop: Enable for repeating demos
+
+### Platform-Specific Recommendations
+
+**YouTube / Vimeo:**
+- Aspect ratio: 16:9
+- Quality: High
+- Format: MP4
+
+**Documentation / Help Center:**
+- Aspect ratio: 16:9 or 4:3
+- Quality: Medium
+- Format: MP4 or GIF (for short clips)
+
+**Social Media:**
+- Instagram/TikTok: 9:16, Medium, MP4
+- LinkedIn/Twitter: 1:1 or 16:9, Medium, MP4
+- Documentation: 16:9, Medium, GIF (under 30 seconds)
+
+## Workflow Tips
+
+<AccordionGroup>
+  <Accordion title="Save Projects for Iterative Editing">
+    Click **Save Project** to preserve your work:
+    - All edits, annotations, and settings are saved
+    - Reopen projects to make changes
+    - Export multiple versions from the same project
+    
+    Use **Ctrl/Cmd + S** to quick save.
+  </Accordion>
+  
+  <Accordion title="Create Template Styles">
+    Set up your brand style once:
+    1. Configure background, padding, effects
+    2. Add brand logo as image annotation
+    3. Save as project
+    4. Load and duplicate for new demos
+  </Accordion>
+  
+  <Accordion title="Test Export Quality">
+    Before creating a long demo:
+    1. Record a 10-second test clip
+    2. Apply your style and export
+    3. Verify quality meets your needs
+    4. Adjust settings if needed
+  </Accordion>
+</AccordionGroup>
+
+## Common Demo Patterns
+
+### Feature Walkthrough
+1. Start with product overview (no zoom)
+2. Zoom in on each feature (2-3 seconds per feature)
+3. Add text annotations for feature names
+4. End with call-to-action annotation
+
+### Bug Report / Issue Reproduction
+1. Show starting state
+2. Add text annotation: "Steps to reproduce"
+3. Slow down (0.75×) during critical actions
+4. Zoom in on error message (3.5×)
+5. Add arrow pointing to the issue
+
+### Tutorial / How-To
+1. Text annotation: Title at start
+2. Zoom in for each step
+3. Add numbered text annotations
+4. Speed up (1.5×) repetitive actions
+5. Slow down (0.75×) for complex steps
+
+### Before / After Comparison
+1. Show "before" state (3-5 seconds)
+2. Text annotation: "Before"
+3. Trim the transition/processing time
+4. Show "after" state
+5. Text annotation: "After"
+6. Zoom in on improvements
+
+<Info>
+**Pro Tip:** Watch your demo without audio first. If the visual story is clear without narration, you've created an excellent demo.
+</Info>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Advanced Editing" icon="wand-magic-sparkles" href="/guides/advanced-editing">
+    Master timeline editing, keyframes, and advanced techniques
+  </Card>
+  <Card title="Customization" icon="palette" href="/guides/customization">
+    Deep dive into styling, fonts, and brand customization
+  </Card>
+</CardGroup>

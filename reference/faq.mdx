@@ -1,0 +1,486 @@
+---
+title: Frequently Asked Questions
+description: Common questions about Open Screen features, capabilities, licensing, and usage
+---
+
+Find answers to the most commonly asked questions about Open Screen.
+
+## General Questions
+
+<AccordionGroup>
+  <Accordion title="What is Open Screen?">
+    Open Screen is a free, open-source desktop application for recording your screen and creating beautiful product demos and walkthroughs. It's designed as a simpler, free alternative to Screen Studio, offering essential features like manual zooms, annotations, background customization, and multiple export formats.
+    
+    Built with Electron, React, TypeScript, and PixiJS, Open Screen runs on macOS, Windows, and Linux.
+  </Accordion>
+
+  <Accordion title="Is Open Screen really free?">
+    Yes, 100% free with no catches! Open Screen is licensed under the MIT License, which means:
+    
+    - ✅ Free for personal use
+    - ✅ Free for commercial use
+    - ✅ No subscriptions or hidden fees
+    - ✅ No watermarks on exports
+    - ✅ No usage limits
+    - ✅ Open source - you can view and modify the code
+    
+    You can use it, modify it, and distribute it freely.
+  </Accordion>
+
+  <Accordion title="How does Open Screen compare to Screen Studio?">
+    Open Screen is **not** a 1:1 clone of Screen Studio. It's a much simpler take that covers the basics:
+    
+    **What Open Screen has:**
+    - Screen and application recording (up to 4K @ 60fps)
+    - Manual zoom controls with customizable depth
+    - Crop and trim tools
+    - Custom backgrounds (wallpapers, gradients, solid colors, images)
+    - Motion blur for smooth effects
+    - Annotations (text, arrows, images)
+    - Speed adjustments
+    - Multiple export formats (MP4, GIF)
+    - Multiple aspect ratios
+    
+    **What Screen Studio adds:**
+    - Automatic zoom detection and smoothing
+    - Advanced cursor effects
+    - Audio recording and editing
+    - More built-in backgrounds and effects
+    - Professional support
+    
+    If you need all the fancy features, Screen Studio ($29/month) is worth supporting. If you just want the basics for free, Open Screen does the job well!
+  </Accordion>
+
+  <Accordion title="What platforms does Open Screen support?">
+    Open Screen runs on all major desktop platforms:
+    
+    - **macOS**: macOS 10.13 (High Sierra) or later (Intel and Apple Silicon)
+    - **Windows**: Windows 10 (64-bit) or later
+    - **Linux**: Ubuntu 18.04 or equivalent (provided as AppImage)
+    
+    Download installers for your platform from the [GitHub Releases page](https://github.com/siddharthvaddem/openscreen/releases).
+  </Accordion>
+
+  <Accordion title="Is my data private and secure?">
+    Absolutely. Open Screen:
+    
+    - Stores all recordings locally on your computer
+    - Does not upload anything to the cloud
+    - Does not collect any analytics or telemetry
+    - Does not require an account or login
+    - Is fully open source so you can verify this yourself
+    
+    Your screen recordings and projects never leave your machine unless you explicitly export and share them.
+  </Accordion>
+</AccordionGroup>
+
+## Features and Capabilities
+
+<AccordionGroup>
+  <Accordion title="Can I record audio?">
+    No, Open Screen currently only records video (screen capture). Audio recording is not supported in the current version.
+    
+    This is a known limitation that may be addressed in future updates. Check the [project roadmap](https://github.com/users/siddharthvaddem/projects/3) for planned features.
+  </Accordion>
+
+  <Accordion title="What recording quality does Open Screen support?">
+    Open Screen can record at up to:
+    
+    - **4K resolution** (3840×2160)
+    - **60 frames per second**
+    - **Up to 76.5 Mbps bitrate** (for 4K @ 60fps)
+    - **WebM format** with AV1, H.264, VP9, or VP8 codec
+    
+    The actual quality depends on your display resolution and system capabilities. The app automatically selects the best settings your system supports.
+  </Accordion>
+
+  <Accordion title="Can I record a specific application instead of the entire screen?">
+    Yes! Before starting a recording, you can select either:
+    
+    - Your entire screen
+    - A specific application window
+    
+    Use the source selector dropdown to choose what to record.
+  </Accordion>
+
+  <Accordion title="What export formats are supported?">
+    Open Screen supports two export formats:
+    
+    **MP4 Video:**
+    - H.264 codec with hardware acceleration
+    - Three quality presets (Source, Good, Medium)
+    - Supports all aspect ratios and resolutions up to 4K
+    - Best for high-quality videos and sharing
+    
+    **Animated GIF:**
+    - Frame rates: 15, 20, 25, or 30 FPS
+    - Size presets: Medium (720p), Large (1080p), Original
+    - Infinite loop or play once
+    - Best for quick previews and social media
+    
+    See the [Export Formats](/reference/export-formats) reference for detailed specifications.
+  </Accordion>
+
+  <Accordion title="Can I add text and annotations?">
+    Yes! Open Screen supports adding:
+    
+    - **Text annotations** with custom styling
+    - **Arrows** for pointing out elements
+    - **Images** for logos, overlays, or callouts
+    
+    All annotations can be positioned, resized, and timed to appear at specific points in your video.
+  </Accordion>
+
+  <Accordion title="Does Open Screen support motion blur?">
+    Yes! Motion blur can be enabled to create smoother pan and zoom effects. This helps reduce perceived jitter when the camera moves, giving your videos a more professional, cinematic look.
+    
+    You can toggle motion blur on/off in the settings panel.
+  </Accordion>
+
+  <Accordion title="What aspect ratios can I export?">
+    Open Screen supports 7 aspect ratios to match popular platforms:
+    
+    - **16:9** - YouTube, standard video
+    - **9:16** - TikTok, Instagram Stories
+    - **1:1** - Instagram feed, square posts
+    - **4:3** - Classic video format
+    - **4:5** - Instagram portrait
+    - **16:10** - Widescreen displays
+    - **10:16** - Vertical widescreen
+    
+    The aspect ratio can be selected before export and is independent of your recording resolution.
+  </Accordion>
+
+  <Accordion title="Can I customize the background?">
+    Yes! Open Screen offers several background options:
+    
+    - Built-in wallpapers
+    - Solid colors
+    - Gradient backgrounds
+    - Your own custom images
+    
+    The background appears behind your screen recording, making your demos look more professional and polished.
+  </Accordion>
+</AccordionGroup>
+
+## Technical Questions
+
+<AccordionGroup>
+  <Accordion title="Why does macOS block the app from opening?">
+    Since Open Screen is free and open-source, it doesn't have an Apple Developer Certificate (which costs $99/year). This causes macOS Gatekeeper to block it.
+    
+    To bypass this, run this command in Terminal:
+    
+    ```bash
+    xattr -rd com.apple.quarantine /Applications/Openscreen.app
+    ```
+    
+    Then grant Screen Recording and Accessibility permissions in System Settings > Privacy & Security.
+    
+    This is safe for verified open-source software. Always download from the [official GitHub releases](https://github.com/siddharthvaddem/openscreen/releases).
+  </Accordion>
+
+  <Accordion title="Does Open Screen use hardware acceleration?">
+    Yes! Open Screen automatically uses hardware-accelerated video encoding when available:
+    
+    - **GPU encoding** for MP4 exports (2-5× faster)
+    - **WebGL/GPU rendering** for real-time effects
+    - **Automatic fallback** to software encoding if hardware isn't available
+    
+    The app will show in the console whether hardware or software encoding is being used.
+  </Accordion>
+
+  <Accordion title="How much disk space do recordings use?">
+    Recording file sizes vary by resolution and frame rate:
+    
+    | Resolution | Frame Rate | File Size (per minute) |
+    |------------|------------|------------------------|
+    | 4K | 60 FPS | ~575 MB |
+    | 4K | 30 FPS | ~337 MB |
+    | 1080p | 60 FPS | ~229 MB |
+    | 1080p | 30 FPS | ~135 MB |
+    | 720p | 30 FPS | ~135 MB |
+    
+    Ensure you have sufficient free space before recording (at least 1GB recommended).
+  </Accordion>
+
+  <Accordion title="Why is GIF export so slow?">
+    GIF encoding is computationally intensive because:
+    
+    - Each frame must be color-quantized to a 256-color palette
+    - Floyd-Steinberg dithering is applied for quality
+    - The process is CPU-intensive (uses 4 worker threads)
+    - Longer videos = more frames to process
+    
+    A 30-second video at 30 FPS can take 5-10 minutes to compile. This is normal.
+    
+    **To speed up GIF exports:**
+    - Use lower frame rate (15-20 FPS)
+    - Use Medium size preset instead of Large/Original
+    - Consider exporting as MP4 instead (10-50× smaller and faster)
+  </Accordion>
+
+  <Accordion title="What technologies is Open Screen built with?">
+    Open Screen is built using modern web technologies:
+    
+    - **Electron** - Cross-platform desktop framework
+    - **React** - UI framework
+    - **TypeScript** - Type-safe JavaScript
+    - **Vite** - Build tool and dev server
+    - **PixiJS** - GPU-accelerated 2D rendering
+    - **WebCodecs API** - Hardware video encoding/decoding
+    - **dnd-timeline** - Timeline editor component
+    - **Mediabunny** - Video muxing library
+    
+    The full source code is available on [GitHub](https://github.com/siddharthvaddem/openscreen).
+  </Accordion>
+
+  <Accordion title="Can I run Open Screen on older hardware?">
+    Minimum requirements:
+    
+    - 4GB RAM
+    - GPU with WebGL 2.0 support (most from 2012+)
+    - 500MB disk space
+    
+    **However**, for the best experience:
+    - 8GB+ RAM recommended
+    - Multi-core CPU (4+ cores)
+    - Dedicated GPU with hardware encoding
+    - SSD storage
+    
+    Older hardware may struggle with 4K recording or complex effects, but should handle 1080p recording and editing fine.
+  </Accordion>
+</AccordionGroup>
+
+## Usage and Workflow
+
+<AccordionGroup>
+  <Accordion title="How do I start recording?">
+    1. Launch Open Screen
+    2. Select your recording source (screen or application) from the dropdown
+    3. Click the **Record** button
+    4. Click **Stop Recording** when finished
+    5. The video automatically opens in the editor
+    
+    Make sure you've granted screen recording permissions on first launch.
+  </Accordion>
+
+  <Accordion title="Can I edit recordings made with other apps?">
+    Currently, Open Screen only edits videos recorded within the app itself. You cannot import external video files.
+    
+    This limitation may be addressed in future versions. Check the [project roadmap](https://github.com/users/siddharthvaddem/projects/3) for planned features.
+  </Accordion>
+
+  <Accordion title="How do I add zoom effects?">
+    1. Move the playhead to where you want the zoom to start
+    2. Press `Z` or click **Add Zoom**
+    3. Adjust the zoom region duration by dragging its edges in the timeline
+    4. Adjust the zoom depth (how much to zoom in) using the controls
+    5. Position the zoom target by dragging in the preview
+    
+    You can add multiple zoom regions throughout your video.
+  </Accordion>
+
+  <Accordion title="How do I trim unwanted sections?">
+    1. Press `T` or click **Add Trim**
+    2. Position the trim region over the section you want to remove
+    3. Adjust the trim region duration by dragging its edges
+    4. Multiple trim regions can be added to remove multiple sections
+    
+    Trimmed sections are excluded from the final export.
+  </Accordion>
+
+  <Accordion title="How do I export my video?">
+    1. Click the **Export** button
+    2. Choose your format (MP4 or GIF)
+    3. Select quality/settings:
+       - **MP4**: Choose quality preset (Source/Good/Medium)
+       - **GIF**: Choose frame rate, size, and loop settings
+    4. Choose aspect ratio
+    5. Click **Export**
+    6. Wait for processing to complete
+    7. The file is automatically saved to your downloads folder
+    
+    Export progress is shown in a dialog with current frame count and percentage.
+  </Accordion>
+
+  <Accordion title="Can I save my project and continue editing later?">
+    Yes! Projects are automatically saved as you work. Your edits persist between sessions.
+    
+    However, there's currently no explicit "Save Project" or "Open Project" feature. The app automatically loads your most recent recording and its associated edits.
+  </Accordion>
+
+  <Accordion title="What are the keyboard shortcuts?">
+    Key shortcuts for faster editing:
+    
+    - `Z` - Add Zoom
+    - `T` - Add Trim
+    - `S` - Add Speed adjustment
+    - `A` - Add Annotation
+    - `F` - Add Keyframe
+    - `Space` - Play/Pause
+    - `Ctrl+D` - Delete selected
+    - `Tab` - Cycle annotations forward
+    - `Shift+Tab` - Cycle annotations backward
+    - `Del/⌫` - Delete selected (alternate)
+    
+    Most shortcuts are customizable in settings. See the [Keyboard Shortcuts](/reference/keyboard-shortcuts) reference for details.
+  </Accordion>
+</AccordionGroup>
+
+## Licensing and Contributing
+
+<AccordionGroup>
+  <Accordion title="What is the license?">
+    Open Screen is licensed under the **MIT License**, one of the most permissive open-source licenses.
+    
+    This means you can:
+    - Use it commercially
+    - Modify the source code
+    - Distribute your own versions
+    - Use it in proprietary projects
+    
+    The only requirement is to include the original license and copyright notice.
+    
+    **Disclaimer**: The authors are not liable for any issues, damages, or claims arising from use of the software.
+  </Accordion>
+
+  <Accordion title="Can I contribute to Open Screen?">
+    Absolutely! Contributions are welcome:
+    
+    - **Report bugs** on [GitHub Issues](https://github.com/siddharthvaddem/openscreen/issues)
+    - **Suggest features** in [Discussions](https://github.com/siddharthvaddem/openscreen/discussions)
+    - **Submit pull requests** with bug fixes or new features
+    - **Improve documentation**
+    - **Share feedback** on your experience
+    
+    Check the [project roadmap](https://github.com/users/siddharthvaddem/projects/3) to see current priorities and find ways to contribute.
+  </Accordion>
+
+  <Accordion title="Can I fork Open Screen and create my own version?">
+    Yes! The MIT License allows you to:
+    
+    - Fork the repository
+    - Modify the code however you want
+    - Release your own version
+    - Even sell your modified version commercially
+    
+    All that's required is:
+    - Include the original MIT License
+    - Credit the original authors
+    - "Be cool" and give a shoutout if you build on it 😊
+  </Accordion>
+
+  <Accordion title="Where is the source code?">
+    The complete source code is available on GitHub:
+    
+    **Repository**: [github.com/siddharthvaddem/openscreen](https://github.com/siddharthvaddem/openscreen)
+    
+    The repo includes:
+    - Full application source code
+    - Build scripts and configuration
+    - Issue tracker and discussions
+    - Project roadmap
+    - Contribution guidelines
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="My recording won't start - what should I check?">
+    Common causes:
+    
+    1. **No source selected** - Choose a screen or application to record
+    2. **Missing permissions** - Grant Screen Recording permission:
+       - macOS: System Settings > Privacy & Security > Screen Recording
+       - Linux: Allow when prompted by desktop environment
+    3. **Insufficient disk space** - Ensure at least 1GB free
+    4. **App needs restart** - Try restarting after granting permissions
+    
+    See the [Troubleshooting](/reference/troubleshooting) guide for more solutions.
+  </Accordion>
+
+  <Accordion title="Export failed - what went wrong?">
+    Common causes:
+    
+    1. **Insufficient disk space** - Need at least 2GB free for exports
+    2. **Memory exhaustion** - Close other apps, especially for GIF exports
+    3. **Complex effects** - Try removing some effects or exporting a shorter section
+    4. **Encoder error** - Try a lower quality setting or different format
+    
+    Check the developer console (View > Developer > Developer Tools) for detailed error messages.
+    
+    See the [Troubleshooting](/reference/troubleshooting) guide for detailed solutions.
+  </Accordion>
+
+  <Accordion title="The app is slow or laggy - how can I improve performance?">
+    Performance optimization tips:
+    
+    1. **Close other applications** to free up RAM and CPU
+    2. **Disable motion blur** if enabled
+    3. **Reduce preview window size**
+    4. **Simplify your project** - fewer annotations and effects
+    5. **Update graphics drivers**
+    6. **Pause playback** when not previewing
+    7. **Restart the app** to clear memory
+    
+    Recording and exporting are CPU/GPU intensive, so some fan noise and heat are normal during these operations.
+  </Accordion>
+
+  <Accordion title="Where can I get help?">
+    If you're stuck or found a bug:
+    
+    1. Check the [Troubleshooting Guide](/reference/troubleshooting) for common issues
+    2. Search [GitHub Issues](https://github.com/siddharthvaddem/openscreen/issues) for similar problems
+    3. Ask in [GitHub Discussions](https://github.com/siddharthvaddem/openscreen/discussions)
+    4. Create a new issue with:
+       - Your platform and OS version
+       - Open Screen version
+       - Steps to reproduce
+       - Console logs if available
+       - Screenshots/recordings of the issue
+    
+    The community and maintainers are active and responsive!
+  </Accordion>
+</AccordionGroup>
+
+## Platform-Specific
+
+<AccordionGroup>
+  <Accordion title="Does Open Screen work on Apple Silicon Macs (M1/M2/M3)?">
+    Yes! Open Screen supports both Intel and Apple Silicon Macs. The app runs natively on Apple Silicon for optimal performance.
+    
+    Download the appropriate version for your Mac from the releases page. If you encounter issues, try the Rosetta (Intel) version.
+  </Accordion>
+
+  <Accordion title="Which Linux distributions are supported?">
+    Open Screen is distributed as an **AppImage**, which works on most Linux distributions:
+    
+    - Ubuntu 18.04+
+    - Debian 10+
+    - Fedora 30+
+    - Arch Linux
+    - openSUSE
+    - Pop!_OS
+    - Linux Mint
+    - Elementary OS
+    
+    You may need to install `libfuse2` on newer distributions. See [System Requirements](/reference/system-requirements) for details.
+  </Accordion>
+
+  <Accordion title="Does Open Screen work on Wayland?">
+    Yes, but with some caveats:
+    
+    - You may need to grant portal permissions when first recording
+    - Ensure `xdg-desktop-portal` is installed
+    - Some desktop environments have better Wayland support than others
+    - X11 session is more reliable if you encounter issues
+    
+    GNOME and KDE Plasma generally work well. If you have problems, try switching to an X11 session temporarily.
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  Have a question not answered here? Ask in [GitHub Discussions](https://github.com/siddharthvaddem/openscreen/discussions) or check the other reference pages in this documentation.
+</Note>

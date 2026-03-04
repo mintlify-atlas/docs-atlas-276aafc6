@@ -1,0 +1,266 @@
+---
+title: System Requirements
+description: Platform requirements, dependencies, and permissions needed to run Open Screen on macOS, Windows, and Linux
+---
+
+Open Screen is a cross-platform desktop application built with Electron. This page outlines the system requirements and necessary permissions for each supported platform.
+
+## Minimum System Requirements
+
+<CardGroup cols={3}>
+  <Card title="macOS" icon="apple">
+    - macOS 10.13 (High Sierra) or later
+    - 4GB RAM minimum
+    - Intel or Apple Silicon processor
+    - 500MB free disk space
+  </Card>
+  
+  <Card title="Windows" icon="windows">
+    - Windows 10 (64-bit) or later
+    - 4GB RAM minimum
+    - Intel/AMD processor
+    - 500MB free disk space
+  </Card>
+  
+  <Card title="Linux" icon="linux">
+    - Ubuntu 18.04 or equivalent
+    - 4GB RAM minimum
+    - x64 processor
+    - 500MB free disk space
+  </Card>
+</CardGroup>
+
+## Recommended Specifications
+
+For the best experience, especially when working with high-resolution recordings:
+
+- **Processor**: Multi-core CPU (4+ cores recommended)
+- **RAM**: 8GB or more
+- **Graphics**: Dedicated GPU with hardware video encoding support
+- **Storage**: SSD with at least 5GB free space for recordings
+- **Display**: 1920×1080 or higher resolution
+
+<Note>
+  Hardware-accelerated video encoding is automatically used when available, significantly improving export performance.
+</Note>
+
+## Recording Capabilities
+
+### Maximum Recording Quality
+
+Open Screen can record at up to:
+
+- **Resolution**: 4K (3840×2160)
+- **Frame Rate**: 60 FPS
+- **Bitrate**: Up to 45 Mbps (4K) or 28 Mbps (QHD)
+- **Codec**: WebM container with AV1, H.264, VP9, or VP8
+
+<Info>
+  The actual recording quality depends on your display resolution and system capabilities. Open Screen automatically selects the best available codec and settings.
+</Info>
+
+### Codec Priority
+
+Open Screen automatically selects the best supported codec in this order:
+
+1. **AV1** (best compression, newest)
+2. **H.264** (best compatibility)
+3. **VP9** (good balance)
+4. **VP8** (fallback)
+5. **WebM** (generic fallback)
+
+## Required Permissions
+
+Open Screen requires specific system permissions to function properly. You'll be prompted to grant these on first launch.
+
+<Tabs>
+  <Tab title="macOS">
+    ### Screen Recording Permission
+    
+    Required to capture your screen or application windows.
+    
+    **Grant via:**
+    1. Open **System Settings** (or System Preferences)
+    2. Go to **Privacy & Security > Screen Recording**
+    3. Enable the toggle for **Openscreen**
+    
+    ### Accessibility Permission
+    
+    Required for some screen capture features.
+    
+    **Grant via:**
+    1. Open **System Settings** (or System Preferences)
+    2. Go to **Privacy & Security > Accessibility**  
+    3. Enable the toggle for **Openscreen**
+    
+    ### Full Disk Access (for installation)
+    
+    Required to run the installation bypass command if the app is blocked by Gatekeeper.
+    
+    **Grant to Terminal:**
+    1. Open **System Settings** (or System Preferences)
+    2. Go to **Privacy & Security > Full Disk Access**
+    3. Enable the toggle for **Terminal** (or your terminal app)
+    
+    <Warning>
+      After granting permissions, you may need to restart the application for changes to take effect.
+    </Warning>
+  </Tab>
+  
+  <Tab title="Windows">
+    ### No Special Permissions Required
+    
+    Windows typically grants screen recording access automatically to desktop applications.
+    
+    <Note>
+      If you're using enterprise Windows with restricted policies, contact your IT administrator to allow screen recording applications.
+    </Note>
+  </Tab>
+  
+  <Tab title="Linux">
+    ### Screen Recording Permission
+    
+    Permission requirements vary by desktop environment:
+    
+    - **GNOME/Wayland**: May require portal permissions
+    - **KDE Plasma**: Usually no additional permissions needed
+    - **X11**: Typically no additional permissions needed
+    
+    ### File Permissions
+    
+    Make the AppImage executable:
+    
+    ```bash
+    chmod +x Openscreen-Linux-*.AppImage
+    ```
+    
+    <Info>
+      Some desktop environments may show a permission dialog when first launching the app. Click "Allow" to grant screen recording access.
+    </Info>
+  </Tab>
+</Tabs>
+
+## Platform-Specific Installation
+
+### macOS Gatekeeper Bypass
+
+Since Open Screen is not signed with an Apple Developer Certificate, you'll need to bypass Gatekeeper:
+
+```bash
+xattr -rd com.apple.quarantine /Applications/Openscreen.app
+```
+
+<Warning>
+  This command requires Full Disk Access for Terminal. Grant this in **System Settings > Privacy & Security > Full Disk Access** before running the command.
+</Warning>
+
+<Accordion title="Why is this needed?">
+  Apple requires all distributed apps to be signed with a paid Developer Certificate. Since Open Screen is free and open-source, it doesn't have this certificate. The `xattr` command removes the quarantine flag that macOS applies to downloaded apps, allowing the app to run.
+  
+  This is safe for open-source software where you can verify the source code. Always download from the official GitHub releases page.
+</Accordion>
+
+### Linux AppImage Sandbox Error
+
+If the app fails to launch with a "sandbox" error:
+
+```bash
+./Openscreen-Linux-*.AppImage --no-sandbox
+```
+
+<Note>
+  The `--no-sandbox` flag disables Chromium's security sandbox, which may be incompatible with some Linux configurations. This is safe for trusted applications like Open Screen.
+</Note>
+
+## Dependencies
+
+Open Screen is built with the following core technologies:
+
+### Runtime Dependencies
+
+- **Electron** 39.2.7 - Cross-platform desktop framework
+- **Chrome WebCodecs API** - Hardware-accelerated video encoding/decoding
+- **WebGL/PixiJS** - GPU-accelerated rendering and effects
+- **Web Demuxer** - Video stream demuxing
+
+<Info>
+  All dependencies are bundled with the application. You don't need to install anything separately.
+</Info>
+
+### Graphics Requirements
+
+- **WebGL 2.0** support (for rendering effects)
+- **VideoDecoder/VideoEncoder API** support (built into Chromium/Electron)
+- **Canvas 2D API** support
+
+<Note>
+  Open Screen requires a GPU capable of WebGL 2.0. Most GPUs from 2012 or later support this.
+</Note>
+
+## Storage Requirements
+
+### Application Size
+
+- **Installation**: ~200-300MB (varies by platform)
+- **Updates**: Downloaded incrementally (typically 50-150MB)
+
+### Recording Storage
+
+Recording file sizes vary based on resolution and duration:
+
+| Resolution | Frame Rate | Bitrate | File Size (per minute) |
+|------------|------------|---------|------------------------|
+| 4K (3840×2160) | 60 FPS | 76.5 Mbps | ~575 MB |
+| 4K (3840×2160) | 30 FPS | 45 Mbps | ~337 MB |
+| QHD (2560×1440) | 60 FPS | 47.6 Mbps | ~357 MB |
+| 1080p (1920×1080) | 60 FPS | 30.6 Mbps | ~229 MB |
+| 1080p (1920×1080) | 30 FPS | 18 Mbps | ~135 MB |
+| 720p (1280×720) | 30 FPS | 18 Mbps | ~135 MB |
+
+<Warning>
+  Ensure you have sufficient disk space before starting long recordings. A 10-minute 4K recording at 60 FPS can use over 5GB of storage.
+</Warning>
+
+## Browser Technology Requirements
+
+Open Screen uses modern web APIs that require recent browser engine versions:
+
+- **WebCodecs API** (Chromium 94+) - Hardware video encoding/decoding
+- **Web Demuxer** - Video container parsing
+- **Canvas2D** and **WebGL 2.0** - Rendering pipeline
+- **MediaRecorder API** - Screen capture
+
+<Info>
+  These are all built into Electron 39 (based on Chromium 132). You don't need to worry about browser compatibility.
+</Info>
+
+## Troubleshooting System Requirements
+
+<AccordionGroup>
+  <Accordion title="App won't launch on macOS">
+    1. Ensure you've run the Gatekeeper bypass command
+    2. Check that you've granted Screen Recording and Accessibility permissions
+    3. Try right-clicking the app and selecting "Open" instead of double-clicking
+  </Accordion>
+  
+  <Accordion title="Recording fails to start">
+    1. Verify screen recording permissions are granted
+    2. Check that you've selected a source (screen or application) to record
+    3. Ensure you have sufficient disk space (at least 1GB free)
+    4. Try restarting the application
+  </Accordion>
+  
+  <Accordion title="Export is very slow">
+    1. Check if hardware acceleration is available (shown in export logs)
+    2. Close other resource-intensive applications
+    3. Use a lower quality preset (Medium or Good instead of Source)
+    4. For GIFs, reduce frame rate or use a smaller size preset
+  </Accordion>
+  
+  <Accordion title="Linux sandbox errors">
+    Run the AppImage with the `--no-sandbox` flag:
+    ```bash
+    ./Openscreen-Linux-*.AppImage --no-sandbox
+    ```
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,205 @@
+---
+title: Contributing to Open Screen
+description: Learn how to contribute to Open Screen and help make it better for everyone
+---
+
+Thank you for considering contributing to Open Screen! By contributing, you help make this project better for everyone. This guide will walk you through the contribution process.
+
+<Info>
+Open Screen is a community-driven project. We welcome contributions of all kinds, from bug fixes to new features.
+</Info>
+
+## How to Contribute
+
+<Steps>
+  <Step title="Fork the Repository">
+    Click the "Fork" button at the top right of the [Open Screen repository](https://github.com/siddharthvaddem/openscreen) to create your own copy.
+  </Step>
+
+  <Step title="Clone Your Fork">
+    Clone your forked repository to your local machine:
+    
+    ```bash
+    git clone https://github.com/your-username/openscreen.git
+    ```
+  </Step>
+
+  <Step title="Create a New Branch">
+    Create a branch for your feature or bug fix:
+    
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+    
+    Use descriptive branch names that indicate the purpose of your changes.
+  </Step>
+
+  <Step title="Make Your Changes">
+    Make your changes to the codebase. Follow the project's coding standards and best practices.
+  </Step>
+
+  <Step title="Test Your Changes">
+    Test your changes thoroughly to ensure they work as expected and do not break existing functionality.
+    
+    Run the test suite:
+    
+    ```bash
+    npm test
+    ```
+  </Step>
+
+  <Step title="Commit Your Changes">
+    Commit your changes with a clear and concise commit message:
+    
+    ```bash
+    git add .
+    git commit -m "Add a brief description of your changes"
+    ```
+  </Step>
+
+  <Step title="Push Your Changes">
+    Push your branch to your forked repository:
+    
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+  </Step>
+
+  <Step title="Open a Pull Request">
+    Go to the original repository and open a pull request from your branch. Provide a clear description of your changes and the problem they solve.
+  </Step>
+</Steps>
+
+## Development Setup
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- Node.js (v16 or higher)
+- npm or yarn
+- Git
+
+### Local Development
+
+To set up the project for local development:
+
+```bash
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+
+# Build the application
+npm run build
+
+# Run linter
+npm run lint
+
+# Run tests
+npm test
+```
+
+### Tech Stack
+
+Open Screen is built with:
+
+- **Electron** - Desktop application framework
+- **React** - UI library
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Build tool and dev server
+- **PixiJS** - 2D rendering engine
+- **dnd-timeline** - Timeline editing component
+
+## Reporting Issues
+
+If you encounter a bug or have a feature request, please open an issue in the [Issues](https://github.com/siddharthvaddem/openscreen/issues) section of the repository.
+
+<Note>
+Provide as much detail as possible when reporting issues, including:
+- Steps to reproduce the bug
+- Expected behavior
+- Actual behavior
+- Screenshots or videos if applicable
+- Your operating system and Open Screen version
+</Note>
+
+## Style Guide
+
+When contributing code to Open Screen, please follow these guidelines:
+
+### Code Style
+
+- Write clear, concise, and descriptive commit messages
+- Include comments where necessary to explain complex code
+- Follow the existing code style and conventions
+- Use TypeScript types and interfaces appropriately
+- Run the linter before committing:
+
+```bash
+npm run lint:fix
+```
+
+### Commit Messages
+
+Use conventional commit format:
+
+- `feat:` for new features
+- `fix:` for bug fixes
+- `docs:` for documentation changes
+- `refactor:` for code refactoring
+- `test:` for adding tests
+- `chore:` for maintenance tasks
+
+Example: `feat: add speed adjustment shortcut configuration`
+
+## What Can You Contribute?
+
+There are many ways to contribute to Open Screen:
+
+<CardGroup cols={2}>
+  <Card title="Bug Fixes" icon="bug">
+    Help fix reported bugs or issues you encounter while using the application.
+  </Card>
+  
+  <Card title="New Features" icon="sparkles">
+    Implement new features or enhancements. Check the [project roadmap](https://github.com/users/siddharthvaddem/projects/3) for ideas.
+  </Card>
+  
+  <Card title="Documentation" icon="book">
+    Improve documentation, add examples, or fix typos.
+  </Card>
+  
+  <Card title="Testing" icon="vial">
+    Write tests to improve code coverage and reliability.
+  </Card>
+</CardGroup>
+
+## Community Guidelines
+
+- Be respectful and welcoming to all contributors
+- Provide constructive feedback on pull requests
+- Help others when you can
+- Follow the [Code of Conduct](https://github.com/siddharthvaddem/openscreen)
+
+## Getting Help
+
+If you need help with your contribution:
+
+- Check the [project roadmap](https://github.com/users/siddharthvaddem/projects/3) to understand the current direction
+- Look at open issues for context
+- Ask questions in your pull request or issue
+- Join discussions in the repository
+
+## License
+
+By contributing to Open Screen, you agree that your contributions will be licensed under the [MIT License](https://github.com/siddharthvaddem/openscreen/blob/main/LICENSE).
+
+<Note>
+Open Screen is 100% free for personal and commercial use. Your contributions help keep it that way!
+</Note>
+
+---
+
+Thank you for contributing to Open Screen! Your efforts help make screen recording accessible and free for everyone.

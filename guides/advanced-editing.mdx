@@ -1,0 +1,486 @@
+---
+title: 'Advanced Editing Techniques'
+description: 'Master timeline editing, keyframes, zoom focus, and advanced techniques for professional screen recordings'
+---
+
+Take your Open Screen editing skills to the next level with advanced timeline techniques, precision editing, and workflow optimization.
+
+## Timeline Mastery
+
+The timeline is your command center for precise video editing.
+
+### Understanding the Timeline
+
+**Components:**
+- **Time axis** - Displays time markers (adaptive based on video duration)
+- **Playhead** - Green vertical line showing current position
+- **Row tracks** - Separate rows for Zoom, Trim, Annotation, and Speed
+- **Region items** - Draggable, resizable editing regions
+
+**Timeline Zoom Levels:**
+- Automatically adjusts interval markers (0.25s to 1 hour)
+- Zoom in: **Ctrl/Cmd + Scroll** (up)
+- Zoom out: **Ctrl/Cmd + Scroll** (down)
+- Pan: **Shift + Ctrl/Cmd + Scroll**
+
+<Tip>
+Zoom in for precise edits (frame-level accuracy), zoom out for overall view and long videos.
+</Tip>
+
+### Playhead Navigation
+
+**Moving the Playhead:**
+- Click anywhere on the timeline
+- Drag the playhead diamond handle
+- Use playback controls (play/pause, seek)
+
+**Playhead Snapping:**
+- Automatically snaps to nearby keyframes (within 150ms)
+- Helpful for precise positioning
+- Snap to region start/end points
+
+<Note>
+The playhead position determines where new regions are created when you press keyboard shortcuts.
+</Note>
+
+### Keyframe Markers
+
+Keyframes mark important moments in your video:
+
+1. Position playhead at desired time
+2. Press **F** to add keyframe
+3. Keyframes appear as markers on timeline
+4. Click keyframe to select (turns blue)
+5. Press **Delete** or **Ctrl/Cmd + D** to remove
+
+**Keyframe Uses:**
+- Mark section boundaries
+- Plan zoom/annotation positions
+- Quick navigation reference points
+- Align multiple edits
+
+**Keyframe Tips:**
+- Playhead snaps to keyframes when dragging
+- Use keyframes before adding regions for precision
+- Remove keyframes after editing to declutter timeline
+
+## Zoom Region Techniques
+
+### Manual Zoom Placement
+
+<Steps>
+  <Step title="Position playhead">
+    Move playhead to where zoom should start
+  </Step>
+  
+  <Step title="Add zoom region">
+    Press **Z** or click zoom button
+  </Step>
+  
+  <Step title="Adjust duration">
+    Drag left/right edges to resize
+    - Minimum duration: 1ms (frame-level precision)
+    - Cannot overlap other zoom regions
+  </Step>
+  
+  <Step title="Set zoom level">
+    Select zoom region, choose depth in settings:
+    - 1.25× - Subtle emphasis
+    - 1.5× - Noticeable zoom
+    - 1.8× - Clear focus
+    - 2.2× - Strong zoom
+    - 3.5× - Detailed view
+    - 5× - Maximum zoom
+  </Step>
+  
+  <Step title="Adjust zoom focus">
+    Click and drag the zoom focus point on the video preview to center on the important area
+  </Step>
+</Steps>
+
+### Auto-Suggest Zooms
+
+Leverage cursor telemetry for intelligent zoom suggestions:
+
+1. Record a screencast with cursor movements
+2. Click the **Wand Sparkles** button in timeline
+3. Open Screen analyzes cursor dwell patterns
+4. Automatically creates zoom regions at cursor pause points
+5. Zoom focus centers on cursor position
+
+**How Auto-Suggest Works:**
+- Analyzes cursor position over time
+- Detects "dwell moments" where cursor paused
+- Ranks candidates by dwell strength
+- Spaces suggestions 1.8 seconds apart
+- Avoids overlapping existing zooms
+
+<Info>
+Auto-suggest is perfect for first-pass editing. Review and adjust suggested zooms for final polish.
+</Info>
+
+### Zoom Focus Control
+
+Precise control over zoom center point:
+
+**Setting Focus:**
+1. Select zoom region on timeline
+2. Zoom preview appears on video
+3. Click and drag the focus point (crosshair)
+4. Position over the UI element to emphasize
+5. Focus is clamped to zoom boundaries
+
+**Focus Coordinates:**
+- Normalized 0-1 range (center is 0.5, 0.5)
+- Automatically adjusts for zoom depth
+- Persisted in project files
+
+**Best Practices:**
+- Center focus on buttons, text, or UI elements
+- Avoid edges (can show cropped areas)
+- Test at different zoom levels
+- Use playback preview to verify
+
+## Speed Region Techniques
+
+Control playback speed for pacing:
+
+### Speed Options
+
+**Slow Motion:**
+- **0.25×** - Ultra slow (25% speed)
+- **0.5×** - Half speed
+- **0.75×** - Slightly slow
+
+**Fast Forward:**
+- **1.25×** - Slightly fast
+- **1.5×** - 1.5× speed (recommended)
+- **1.75×** - Fast
+- **2×** - Double speed
+
+### Strategic Speed Use
+
+**Speed Up (1.5× - 2×):**
+- File uploads/downloads
+- Form filling
+- Navigation between sections
+- Repetitive actions
+- Loading screens (or trim them)
+
+**Slow Down (0.5× - 0.75×):**
+- Critical interactions
+- Complex UI gestures
+- Important reveals
+- Detailed code changes
+
+<Warning>
+Speed regions cannot overlap each other or span across trim regions. Plan your speed changes carefully.
+</Warning>
+
+### Speed Region Workflow
+
+1. Watch video at normal speed
+2. Identify sections to speed up/slow down
+3. Add keyframes at boundaries
+4. Press **S** at each section start
+5. Adjust region duration
+6. Select speed multiplier
+7. Preview result
+
+## Trim Region Mastery
+
+Remove unwanted content:
+
+### Precision Trimming
+
+**Adding Trims:**
+1. Position playhead at unwanted section start
+2. Press **T** to add trim region
+3. Drag edges to select content to remove
+4. Region turns red (indicates removal)
+
+**Trim Region Rules:**
+- Cannot overlap other trims
+- Removed from final export
+- Original recording preserved
+- Can undo by deleting trim region
+
+### Multi-Trim Workflow
+
+For videos with multiple cuts:
+
+<Steps>
+  <Step title="First pass: Mark all mistakes">
+    - Watch full video
+    - Add keyframes at each mistake/pause
+    - Don't create trims yet
+  </Step>
+  
+  <Step title="Second pass: Create trim regions">
+    - Navigate to first keyframe
+    - Press T to create trim
+    - Adjust edges precisely
+    - Move to next keyframe
+    - Repeat
+  </Step>
+  
+  <Step title="Third pass: Verify continuity">
+    - Play video with trims
+    - Check transitions are smooth
+    - Adjust trim boundaries if needed
+  </Step>
+  
+  <Step title="Clean up">
+    - Delete keyframes (no longer needed)
+    - Final playback review
+  </Step>
+</Steps>
+
+<Tip>
+Leave small padding (100-200ms) between content and trim edges for smoother transitions.
+</Tip>
+
+## Annotation Advanced Techniques
+
+### Overlapping Annotations
+
+Multiple annotations at the same timestamp:
+
+**Layer Order (Z-Index):**
+- Annotations stack by creation order
+- Earlier = lower layer
+- Later = higher layer (on top)
+
+**Navigating Overlaps:**
+- Position playhead in overlap region
+- Press **Tab** to cycle forward through annotations
+- Press **Shift + Tab** to cycle backward
+- Selected annotation highlights in settings panel
+
+**Use Cases:**
+- Title + subtitle text
+- Arrow + text label
+- Multiple callouts on same frame
+- Logo + watermark
+
+### Annotation Duration Timing
+
+**Short Annotations (1-2 seconds):**
+- Quick callouts
+- Tooltips
+- Transient labels
+
+**Medium Annotations (3-5 seconds):**
+- Explanatory text
+- Standard callouts
+- Most use cases
+
+**Long Annotations (5+ seconds):**
+- Persistent labels
+- Watermarks
+- Section titles
+- Logos
+
+### Annotation Positioning
+
+**Drag to Position:**
+- Click and drag annotation on video preview
+- Snap to edges (automatic)
+- Percentage-based (scales with export resolution)
+
+**Resize:**
+- Drag corner handles
+- Maintains aspect ratio (shift + drag to ignore)
+- Width/height in percentage of video
+
+**Common Positions:**
+- **Top Center** (50%, 10%) - Titles
+- **Bottom Center** (50%, 85%) - Subtitles
+- **Top Right** (85%, 10%) - Logos
+- **Floating** - Callouts near UI elements
+
+## Region Management
+
+### Selecting Regions
+
+**Single Selection:**
+- Click region on timeline
+- Region highlights
+- Settings panel shows controls
+
+**Deselecting:**
+- Click empty timeline area
+- Settings panel returns to default
+
+**Selecting Overlapping Items:**
+- Use Tab/Shift+Tab for annotations
+- Zoom, Trim, Speed rows prevent overlaps
+
+### Deleting Regions
+
+**Keyboard Shortcuts:**
+- **Delete** or **Backspace** - Delete selected
+- **Ctrl/Cmd + D** - Delete selected (alternative)
+
+**Via Settings Panel:**
+- **Delete Zoom** button (when zoom selected)
+- **Delete Trim Region** button (when trim selected)
+- **Delete Annotation** button (when annotation selected)
+- **Delete Speed Region** button (when speed selected)
+
+<Warning>
+Deletion is immediate but can be undone by reloading the project if you saved before.
+</Warning>
+
+### Moving Regions
+
+Reposition regions on timeline:
+
+1. Select region
+2. Drag left or right on timeline
+3. Cannot drag into overlapping position (except annotations)
+4. Snaps to keyframes and other regions
+
+**Resize vs Move:**
+- Drag edges = resize
+- Drag center = move entire region
+
+## Timeline Keyboard Shortcuts
+
+### Essential Shortcuts
+
+| Action | Shortcut |
+|--------|----------|
+| Add Zoom | Z |
+| Add Trim | T |
+| Add Annotation | A |
+| Add Speed | S |
+| Add Keyframe | F |
+| Play/Pause | Space |
+| Delete Selected | Delete or Ctrl/Cmd + D |
+| Cycle Annotations Forward | Tab |
+| Cycle Annotations Backward | Shift + Tab |
+| Zoom Timeline | Ctrl/Cmd + Scroll |
+| Pan Timeline | Shift + Ctrl/Cmd + Scroll |
+
+### Customizing Shortcuts
+
+1. Click the keyboard icon in timeline toolbar
+2. Click on any shortcut to rebind
+3. Press new key combination
+4. Conflicts are highlighted
+5. Click **Save** to apply
+
+<Note>
+Shortcuts use Cmd on macOS and Ctrl on Windows/Linux automatically.
+</Note>
+
+## Advanced Workflows
+
+### Long Video Editing
+
+For videos over 5 minutes:
+
+<Accordion title="Segment-based workflow">
+1. **Add keyframes** at natural breaks (5-10 segments)
+2. **Edit segment by segment:**
+   - Zoom in timeline to focus on one segment
+   - Add all edits for that segment
+   - Pan to next segment
+3. **Review full video** once all segments done
+4. **Adjust timing** between segments
+</Accordion>
+
+### Batch Annotation Creation
+
+Adding multiple annotations efficiently:
+
+<Accordion title="Template-based annotations">
+1. Create first annotation with full styling
+2. Note exact settings (font, size, colors)
+3. Add remaining annotations
+4. Apply same settings to each
+5. Adjust position and content
+</Accordion>
+
+### Multi-Version Exports
+
+Create multiple versions from one project:
+
+<Accordion title="Version workflow">
+1. **Create master project** with all edits
+2. **Export version 1:** Full quality MP4
+3. **Adjust aspect ratio** (e.g., 16:9 → 1:1)
+4. **Export version 2:** Social media
+5. **Change to 9:16** for stories
+6. **Export version 3:** Vertical
+7. **Save project** to preserve all versions
+</Accordion>
+
+## Timeline Performance Tips
+
+<AccordionGroup>
+  <Accordion title="Optimize for long videos">
+    - Use fewer zoom regions (under 20)
+    - Limit annotations (under 30)
+    - Close other applications
+    - Export in segments if needed
+  </Accordion>
+  
+  <Accordion title="Smooth playback preview">
+    - Reduce padding temporarily (faster rendering)
+    - Disable motion blur for preview
+    - Zoom in timeline to reduce visible region count
+  </Accordion>
+  
+  <Accordion title="Fast exports">
+    - Use Medium quality for drafts
+    - GIF exports are faster for short clips
+    - Close preview window during export
+    - High quality exports take longer but use all CPU cores
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+### Regions Won't Place
+
+**Problem:** "Cannot place zoom/trim/speed here" error
+
+**Solutions:**
+- Check for overlapping regions in same row
+- Move playhead to empty space
+- Delete or resize existing regions
+- Ensure there's enough space (minimum duration)
+
+### Timeline Feels Sluggish
+
+**Problem:** Slow timeline interaction or preview
+
+**Solutions:**
+- Reduce number of annotations
+- Close other applications
+- Zoom in timeline (renders fewer items)
+- Disable motion blur temporarily
+- Restart Open Screen
+
+### Precision Editing Difficult
+
+**Problem:** Hard to position regions exactly
+
+**Solutions:**
+- Zoom in timeline (Ctrl/Cmd + Scroll up)
+- Add keyframes at target positions
+- Use playhead snapping to keyframes
+- Drag region edges slowly for fine control
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Keyboard Shortcuts" icon="keyboard" href="/reference/keyboard-shortcuts">
+    Complete keyboard shortcut reference
+  </Card>
+  <Card title="Tips & Tricks" icon="lightbulb" href="/guides/tips-and-tricks">
+    Productivity tips and workflow optimization
+  </Card>
+</CardGroup>

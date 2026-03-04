@@ -1,0 +1,198 @@
+---
+title: Video Editing
+description: Edit your recordings with a powerful timeline-based editor
+---
+
+## Overview
+
+Open Screen's video editor provides a professional timeline-based editing interface where you can trim, crop, and enhance your recordings with precision.
+
+## Timeline Editor
+
+The timeline is the central hub for all editing operations. It displays your video duration with precise time markers and supports multiple editing tracks.
+
+### Timeline Features
+
+- **Dynamic time scaling** - Automatically adjusts markers based on video duration (0.25s to 1 hour intervals)
+- **Precise playhead control** - Click or drag to seek to any timestamp
+- **Multi-track editing** - Separate rows for zoom, trim, annotations, and speed adjustments
+- **Keyframe markers** - Add markers at important timestamps for quick navigation
+
+<Info>
+The timeline supports videos from a few seconds to several hours in length with automatic scaling for optimal visibility.
+</Info>
+
+### Timeline Navigation
+
+<Tabs>
+  <Tab title="Keyboard">
+    - **Space** - Play/Pause
+    - **Z** - Add zoom region at playhead
+    - **T** - Add trim region at playhead
+    - **A** - Add annotation at playhead
+    - **S** - Add speed region at playhead
+    - **Delete/Backspace** - Delete selected region
+  </Tab>
+  
+  <Tab title="Mouse">
+    - **Click timeline** - Seek to timestamp
+    - **Drag playhead** - Scrub through video
+    - **Ctrl + Scroll** - Zoom timeline view
+    - **Shift + Ctrl + Scroll** - Pan timeline horizontally
+    - **Click region** - Select for editing
+  </Tab>
+</Tabs>
+
+## Zoom Regions
+
+Create dynamic zoom effects to emphasize specific areas of your screen recording.
+
+<Steps>
+  <Step title="Add Zoom Region">
+    Position the playhead where you want the zoom to start and press **Z** or click the zoom button.
+  </Step>
+  
+  <Step title="Adjust Duration">
+    Drag the edges of the zoom region on the timeline to control when it starts and ends.
+  </Step>
+  
+  <Step title="Set Zoom Level">
+    Select the zoom region and choose a depth level (1-6) in the settings panel:
+    - **Level 1**: 1.25× magnification
+    - **Level 2**: 1.5× magnification
+    - **Level 3**: 1.8× magnification (default)
+    - **Level 4**: 2.2× magnification
+    - **Level 5**: 3.5× magnification
+    - **Level 6**: 5.0× magnification
+  </Step>
+  
+  <Step title="Position Focus Point">
+    Click on the video preview to set where the zoom should focus. The green crosshair shows the current focus point.
+  </Step>
+</Steps>
+
+### AI Zoom Suggestions
+
+Click the **magic wand icon** to automatically generate zoom regions based on your cursor movements during recording.
+
+<Note>
+Zoom suggestions analyze cursor dwell time and movement patterns to identify moments where you paused or clicked, suggesting these as natural zoom candidates.
+</Note>
+
+## Trimming
+
+Remove unwanted sections from your video without re-encoding.
+
+### Creating Trim Regions
+
+1. Press **T** at the playhead position
+2. Drag the trim region edges to select the section to remove
+3. Multiple trim regions can exist - they'll all be removed from the final export
+
+<Warning>
+Trim regions cannot overlap with each other. The editor will prevent you from creating overlapping trims.
+</Warning>
+
+### Trim Behavior
+
+- Trimmed sections are completely removed from exports
+- Timeline automatically adjusts durations after trims
+- Speed regions and other effects respect trim boundaries
+
+## Speed Control
+
+Adjust playback speed for specific sections of your video.
+
+### Available Speed Options
+
+- **0.25×** - Quarter speed (slow motion)
+- **0.5×** - Half speed
+- **0.75×** - Three-quarter speed
+- **1.25×** - Slightly faster
+- **1.5×** - Default fast forward
+- **1.75×** - Faster
+- **2×** - Double speed
+
+### Adding Speed Regions
+
+<Steps>
+  <Step title="Create Region">
+    Press **S** at the desired timestamp to create a speed region.
+  </Step>
+  
+  <Step title="Adjust Duration">
+    Drag the region edges to cover the section you want to speed up or slow down.
+  </Step>
+  
+  <Step title="Select Speed">
+    With the region selected, choose a speed multiplier from the settings panel.
+  </Step>
+</Steps>
+
+<Info>
+Speed changes affect the final video duration. A 10-second region at 2× speed will become 5 seconds in the export.
+</Info>
+
+## Cropping
+
+Remove unwanted areas from the edges of your recording.
+
+### Crop Control
+
+1. Open the **Effects** panel
+2. Click the **Crop** section
+3. Drag the crop handles (top, bottom, left, right) to define the visible area
+4. The darkened overlay shows what will be removed
+
+<Note>
+Cropping is non-destructive - you can always adjust or reset the crop region before exporting.
+</Note>
+
+## Aspect Ratio
+
+Change the output aspect ratio of your video to match different platforms.
+
+### Supported Aspect Ratios
+
+- **16:9** - Standard widescreen (YouTube, presentations)
+- **1:1** - Square (Instagram posts)
+- **9:16** - Vertical (TikTok, Instagram Stories, YouTube Shorts)
+- **4:3** - Classic format
+- **21:9** - Ultra-wide
+
+Select your aspect ratio from the dropdown in the timeline toolbar. The preview updates in real-time.
+
+## Project Files
+
+Save your editing progress to continue later.
+
+### Saving Projects
+
+- **Cmd/Ctrl + S** - Save project
+- **Cmd/Ctrl + Shift + S** - Save as new project
+- Projects are saved as `.openscreen` files
+
+### Project Contents
+
+Project files store:
+- Video source path
+- All zoom regions with focus points and depths
+- Trim regions
+- Speed adjustments
+- Annotations and styles
+- Crop settings
+- Export preferences
+
+<Warning>
+Project files reference the original video by path. If you move the source video, you'll need to relocate it when opening the project.
+</Warning>
+
+## Playback Controls
+
+The playback controls at the bottom of the preview allow you to:
+
+- **Play/Pause** - Start or stop video playback
+- **Seek** - Drag the progress bar to jump to any position
+- **Current Time** - View the current timestamp
+
+During playback, all effects (zoom, speed, annotations) are visible in real-time.

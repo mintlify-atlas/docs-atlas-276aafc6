@@ -1,0 +1,103 @@
+---
+title: Keyboard Shortcuts
+description: Complete reference of all keyboard shortcuts available in Open Screen for faster video editing workflow
+---
+
+Open Screen provides a comprehensive set of keyboard shortcuts to speed up your video editing workflow. Shortcuts are customizable and adapt to your platform (Cmd on macOS, Ctrl on Windows/Linux).
+
+## Configurable Shortcuts
+
+These shortcuts can be customized in the settings to match your preferred workflow.
+
+<Note>
+  On macOS, `Ctrl` is automatically mapped to `Cmd` (⌘). On Windows and Linux, `Ctrl` is used.
+</Note>
+
+### Editor Actions
+
+| Action | Default Shortcut | Description |
+|--------|-----------------|-------------|
+| **Add Zoom** | `Z` | Add a zoom effect at the current playhead position |
+| **Add Trim** | `T` | Add a trim region to cut out unwanted sections |
+| **Add Speed** | `S` | Add a speed adjustment region (slow motion or fast forward) |
+| **Add Annotation** | `A` | Add an annotation (text, arrow, or image) to the video |
+| **Add Keyframe** | `F` | Add a keyframe for precise animation control |
+| **Delete Selected** | `Ctrl + D` | Delete the currently selected element |
+| **Play / Pause** | `Space` | Toggle video playback |
+
+### Customizing Shortcuts
+
+You can customize any of the above shortcuts in the application settings:
+
+1. Navigate to **Settings > Keyboard Shortcuts**
+2. Click on the shortcut you want to change
+3. Press your desired key combination
+4. The app will warn you if there's a conflict with existing shortcuts
+
+<Warning>
+  Shortcuts cannot conflict with fixed system shortcuts (listed below). The app will prevent you from creating conflicting bindings.
+</Warning>
+
+## Fixed Shortcuts
+
+These shortcuts are built into the application and cannot be customized.
+
+### Timeline Navigation
+
+| Action | Shortcut | Description |
+|--------|----------|-------------|
+| **Cycle Annotations Forward** | `Tab` | Move focus to the next annotation in the timeline |
+| **Cycle Annotations Backward** | `Shift + Tab` | Move focus to the previous annotation |
+| **Pan Timeline** | `Shift + Ctrl + Scroll` | Pan the timeline horizontally while zoomed in |
+| **Zoom Timeline** | `Ctrl + Scroll` | Zoom in or out of the timeline view |
+
+### Alternative Shortcuts
+
+| Action | Shortcut | Description |
+|--------|----------|-------------|
+| **Delete Selected (alt)** | `Del` or `⌫` | Alternative shortcut to delete the selected element |
+
+<Info>
+  The Delete key (`Del`) and Backspace (`⌫`) provide an alternative way to delete selected elements without using the configurable `Ctrl + D` shortcut.
+</Info>
+
+## Shortcut Conflicts
+
+When customizing shortcuts, Open Screen prevents you from creating conflicting bindings:
+
+<Accordion title="How conflict detection works">
+  The app checks for conflicts in two ways:
+  
+  1. **Fixed shortcuts**: Your custom shortcut cannot match any of the fixed system shortcuts
+  2. **Configurable shortcuts**: Your custom shortcut cannot match another configurable shortcut
+  
+  If a conflict is detected, you'll see a warning message and the shortcut will not be saved.
+</Accordion>
+
+## Platform Differences
+
+<Tabs>
+  <Tab title="macOS">
+    - `Ctrl` in shortcuts is automatically mapped to `Cmd` (⌘)
+    - `Shift` is displayed as ⇧
+    - `Alt` is displayed as ⌥ (Option)
+    - Backspace key is displayed as ⌫
+  </Tab>
+  
+  <Tab title="Windows / Linux">
+    - `Ctrl` remains as Ctrl
+    - `Shift` and `Alt` are displayed as text
+    - Delete and Backspace keys work as expected
+  </Tab>
+</Tabs>
+
+## Tips for Efficient Editing
+
+- Use `Space` frequently to preview your edits while scrubbing through the timeline
+- Combine `Tab` / `Shift + Tab` to quickly navigate between annotations
+- Use single-key shortcuts (`Z`, `T`, `S`, `A`, `F`) for quick access to frequently used tools
+- The `Ctrl + Scroll` zoom is essential for precise timeline editing
+
+<Info>
+  All keyboard shortcuts work regardless of whether the video is playing or paused, making it easy to edit on the fly.
+</Info>

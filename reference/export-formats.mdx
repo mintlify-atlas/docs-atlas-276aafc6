@@ -1,0 +1,207 @@
+---
+title: Export Formats
+description: Comprehensive guide to all supported export formats, resolutions, aspect ratios, and quality settings in Open Screen
+---
+
+Open Screen supports multiple export formats optimized for different use cases, from high-quality MP4 videos to compact animated GIFs.
+
+## Supported Formats
+
+Open Screen currently supports two primary export formats:
+
+### MP4 Video
+
+MP4 is the recommended format for high-quality video exports with the best compression and compatibility.
+
+**Technical Specifications:**
+- **Codec**: H.264 (AVC) with hardware acceleration when available
+- **Container**: MP4 with fast-start optimization
+- **Color Space**: BT.709 with sRGB transfer (IEC 61966-2-1)
+- **Encoding**: Variable bitrate (VBR) for optimal quality/size ratio
+- **Hardware Acceleration**: Automatically uses GPU encoding when available
+
+<Note>
+  Open Screen automatically detects if your system supports hardware-accelerated encoding. If not available, it falls back to software encoding.
+</Note>
+
+### GIF Animation
+
+GIF format is perfect for creating animated loops that can be shared on social media and messaging platforms.
+
+**Technical Specifications:**
+- **Encoding**: Floyd-Steinberg dithering for optimal color quality
+- **Workers**: Multi-threaded encoding (4 workers) for faster processing
+- **Quality**: High-quality palette generation (quality level 10)
+- **Transparency**: Not supported (black background)
+
+<Warning>
+  GIF encoding is computationally intensive. Exports may take longer than MP4, especially for longer videos or higher resolutions.
+</Warning>
+
+## Aspect Ratios
+
+Open Screen supports all common aspect ratios for modern video content:
+
+| Aspect Ratio | Common Use Case | Example Dimensions |
+|--------------|-----------------|--------------------|
+| **16:9** | YouTube, standard video | 1920×1080, 2560×1440, 3840×2160 |
+| **9:16** | TikTok, Instagram Stories | 1080×1920 |
+| **1:1** | Instagram feed, social posts | 1080×1080 |
+| **4:3** | Classic video format | 1440×1080 |
+| **4:5** | Instagram portrait | 1080×1350 |
+| **16:10** | Widescreen displays | 1920×1200 |
+| **10:16** | Vertical widescreen | 1200×1920 |
+
+<Info>
+  The aspect ratio is independent of the export format. You can export any aspect ratio as either MP4 or GIF.
+</Info>
+
+## MP4 Quality Settings
+
+MP4 exports offer three quality presets to balance file size and visual quality.
+
+<Tabs>
+  <Tab title="Source Quality">
+    **Best for:** Archival, professional use, further editing
+    
+    - Exports at the original source resolution
+    - Maximum bitrate based on resolution
+    - No downscaling applied
+    - Largest file size
+    
+    **Bitrates:**
+    - 4K (3840×2160): 45 Mbps base
+    - QHD (2560×1440): 28 Mbps base  
+    - 1080p and below: 18 Mbps base
+    
+    <Note>
+      At 60fps, bitrates are increased by 1.7× for smoother motion.
+    </Note>
+  </Tab>
+  
+  <Tab title="Good Quality">
+    **Best for:** Sharing, presentations, most use cases
+    
+    - Exports at 1080p maximum resolution
+    - Balanced bitrate for quality and file size
+    - Maintains aspect ratio
+    - Recommended for most users
+    
+    Target resolution: 1080p (1920×1080 for 16:9)
+  </Tab>
+  
+  <Tab title="Medium Quality">
+    **Best for:** Quick previews, lower bandwidth
+    
+    - Exports at 720p maximum resolution
+    - Smaller file sizes
+    - Faster export times
+    - Good for draft reviews
+    
+    Target resolution: 720p (1280×720 for 16:9)
+  </Tab>
+</Tabs>
+
+## GIF Settings
+
+### Frame Rate Options
+
+Control the smoothness and file size of your GIF exports:
+
+| Frame Rate | Label | Best For | File Size |
+|------------|-------|----------|----------|
+| **15 FPS** | Balanced | General use, smaller files | Smallest |
+| **20 FPS** | Smooth | Social media, good quality | Small |
+| **25 FPS** | Very smooth | High-quality animations | Medium |
+| **30 FPS** | Maximum | Premium quality, smooth motion | Largest |
+
+<Info>
+  Higher frame rates create smoother animations but significantly increase file size and export time.
+</Info>
+
+### Size Presets
+
+GIF exports can be scaled to different resolutions:
+
+<Accordion title="Medium (720p)">
+  - Maximum height: 720 pixels
+  - Width calculated to preserve aspect ratio
+  - Best for social media sharing
+  - Balanced quality and file size
+</Accordion>
+
+<Accordion title="Large (1080p)">
+  - Maximum height: 1080 pixels
+  - Width calculated to preserve aspect ratio  
+  - High quality for larger displays
+  - Larger file sizes
+</Accordion>
+
+<Accordion title="Original">
+  - No downscaling applied
+  - Uses source resolution
+  - Maximum quality
+  - Largest file sizes (can be very large)
+</Accordion>
+
+### Loop Settings
+
+GIFs can be configured to loop infinitely or play once:
+
+- **Infinite Loop** (default): GIF repeats continuously
+- **Play Once**: GIF plays through once and stops
+
+## Resolution Guidelines
+
+Open Screen automatically calculates optimal export dimensions based on your settings:
+
+### Dimension Requirements
+
+<Warning>
+  All export dimensions must be divisible by 2 for codec compatibility. Open Screen automatically adjusts dimensions if needed.
+</Warning>
+
+### Maximum Resolutions
+
+The app supports exporting up to 4K resolution:
+
+- **Maximum width**: 3840 pixels
+- **Maximum height**: 2160 pixels
+- **Maximum total pixels**: 8,294,400 (4K)
+
+<Info>
+  For aspect ratios that would exceed codec limits at source resolution, Open Screen automatically scales down while preserving quality.
+</Info>
+
+## Performance Considerations
+
+### MP4 Exports
+
+- **Hardware acceleration**: Uses GPU encoding when available for 2-5× faster exports
+- **Parallel processing**: Video encoding and muxing happen in parallel
+- **Queue optimization**: Maintains optimal encoder queue (120 frames) for throughput
+- **Color space**: Full-range RGB with BT.709 primaries for accurate colors
+
+### GIF Exports
+
+- **Multi-threaded**: Uses 4 worker threads for faster encoding
+- **Two-phase process**: 
+  1. Frame extraction and rendering (shows percentage progress)
+  2. GIF compilation (shows "Compiling..." with render progress)
+- **Memory intensive**: Large GIFs may require significant RAM
+
+<Note>
+  GIF compilation can take several minutes for longer videos. The progress indicator will show "Compiling GIF" during the final phase.
+</Note>
+
+## Best Practices
+
+1. **For sharing on YouTube/Vimeo**: Use MP4 at Source or Good quality, 16:9 aspect ratio
+2. **For social media (Twitter/X)**: Use MP4 at Good quality with appropriate aspect ratio
+3. **For Instagram Stories**: Use 9:16 aspect ratio at Good quality
+4. **For animated previews**: Use GIF at 15-20 FPS, Medium size preset
+5. **For high-quality loops**: Use GIF at 25-30 FPS, Large or Original preset
+
+<Info>
+  MP4 files are typically 10-50× smaller than equivalent GIFs while maintaining better quality. Use GIF only when you need platform compatibility or transparent loops.
+</Info>

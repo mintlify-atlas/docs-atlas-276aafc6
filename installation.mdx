@@ -1,0 +1,207 @@
+---
+title: Installation
+description: Download and install OpenScreen on macOS, Windows, or Linux
+---
+
+OpenScreen is available as a native desktop application for macOS, Windows, and Linux. Follow the installation instructions for your operating system below.
+
+## Download OpenScreen
+
+Download the latest installer for your platform from the [GitHub Releases](https://github.com/siddharthvaddem/openscreen/releases) page.
+
+Look for the appropriate file:
+- **macOS**: `.dmg` file
+- **Windows**: `.exe` installer
+- **Linux**: `.AppImage` file
+
+## macOS Installation
+
+<Steps>
+  <Step title="Download the installer">
+    Download the `.dmg` file from the releases page and open it.
+  </Step>
+  
+  <Step title="Install the application">
+    Drag the OpenScreen app to your Applications folder.
+  </Step>
+  
+  <Step title="Bypass Gatekeeper (if needed)">
+    Since OpenScreen doesn't have a developer certificate, macOS Gatekeeper may block the app from opening. To bypass this restriction, run the following command in Terminal:
+
+    ```bash
+    xattr -rd com.apple.quarantine /Applications/Openscreen.app
+    ```
+
+    <Warning>
+    You need to grant your Terminal app **Full Disk Access** in **System Settings > Privacy & Security** before running this command.
+    </Warning>
+  </Step>
+  
+  <Step title="Grant permissions">
+    After running the command, navigate to **System Preferences > Security & Privacy** and grant OpenScreen the necessary permissions:
+    
+    - **Screen Recording** - Required to capture your screen
+    - **Accessibility** - Required for keyboard shortcuts and app detection
+  </Step>
+  
+  <Step title="Launch OpenScreen">
+    Open OpenScreen from your Applications folder. You're ready to start recording!
+  </Step>
+</Steps>
+
+### Troubleshooting macOS Issues
+
+<Accordion title="App won't open after installation">
+  Make sure you've run the `xattr` command to remove the quarantine flag and granted Full Disk Access to your Terminal app.
+</Accordion>
+
+<Accordion title="Screen recording permission not working">
+  Go to **System Preferences > Security & Privacy > Privacy > Screen Recording** and ensure OpenScreen is checked. You may need to restart the app after granting permissions.
+</Accordion>
+
+## Windows Installation
+
+<Steps>
+  <Step title="Download the installer">
+    Download the `.exe` installer from the releases page.
+  </Step>
+  
+  <Step title="Run the installer">
+    Double-click the installer file and follow the on-screen instructions.
+  </Step>
+  
+  <Step title="Complete installation">
+    The installer will install OpenScreen and create a desktop shortcut.
+  </Step>
+  
+  <Step title="Launch OpenScreen">
+    Open OpenScreen from the Start menu or desktop shortcut.
+  </Step>
+</Steps>
+
+<Note>
+Windows Defender or your antivirus software may show a warning since the app is not signed. You can safely proceed with the installation.
+</Note>
+
+## Linux Installation
+
+<Steps>
+  <Step title="Download the AppImage">
+    Download the `.AppImage` file from the releases page.
+  </Step>
+  
+  <Step title="Make it executable">
+    Open a terminal in the directory where you downloaded the file and run:
+
+    ```bash
+    chmod +x Openscreen-Linux-*.AppImage
+    ```
+  </Step>
+  
+  <Step title="Run OpenScreen">
+    Execute the AppImage:
+
+    ```bash
+    ./Openscreen-Linux-*.AppImage
+    ```
+  </Step>
+  
+  <Step title="Grant permissions (if needed)">
+    Depending on your desktop environment, you may need to grant screen recording permissions. The specific steps vary by distribution:
+    
+    - **GNOME**: Settings > Privacy > Screen Sharing
+    - **KDE Plasma**: System Settings > Workspace Behavior > Screen Locking
+    - **Other**: Consult your desktop environment's documentation
+  </Step>
+</Steps>
+
+### Linux Troubleshooting
+
+<Accordion title="App fails to launch with sandbox error">
+  If you encounter a sandbox error, run OpenScreen with the `--no-sandbox` flag:
+
+  ```bash
+  ./Openscreen-Linux-*.AppImage --no-sandbox
+  ```
+
+  <Warning>
+  Running with `--no-sandbox` reduces security isolation. Only use this flag if the app won't launch normally.
+  </Warning>
+</Accordion>
+
+<Accordion title="Missing dependencies on older distributions">
+  Some older Linux distributions may be missing required libraries. Install these packages:
+
+  **Debian/Ubuntu:**
+  ```bash
+  sudo apt install libgtk-3-0 libnotify4 libnss3 libxss1 libxtst6 xdg-utils libatspi2.0-0 libuuid1
+  ```
+
+  **Fedora/RHEL:**
+  ```bash
+  sudo dnf install gtk3 libnotify nss libXScrnSaver libXtst xdg-utils at-spi2-core libuuid
+  ```
+</Accordion>
+
+## System Requirements
+
+To run OpenScreen smoothly, your system should meet these minimum requirements:
+
+### Minimum Requirements
+- **CPU**: Dual-core processor (2 GHz or faster)
+- **RAM**: 4 GB
+- **Storage**: 200 MB free space
+- **Graphics**: Hardware acceleration support
+
+### Recommended for 4K Recording
+- **CPU**: Quad-core processor (3 GHz or faster)
+- **RAM**: 8 GB or more
+- **Graphics**: Dedicated GPU with hardware encoding support
+- **Storage**: SSD with 1 GB+ free space for recordings
+
+<Info>
+OpenScreen automatically adjusts recording quality based on your hardware capabilities. If your system can't maintain 4K@60fps, it will fall back to lower resolutions while keeping quality as high as possible.
+</Info>
+
+## Verifying Installation
+
+After installation, verify that OpenScreen is working correctly:
+
+1. Launch the application
+2. Check that the source selector window appears
+3. Select a screen or window to record
+4. Click the record button to start a test recording
+5. Stop the recording and verify the video editor opens
+
+If everything works, you're ready to move on to the [Quick Start](/quickstart) guide!
+
+## Updating OpenScreen
+
+OpenScreen doesn't have automatic updates yet. To update:
+
+1. Check the [releases page](https://github.com/siddharthvaddem/openscreen/releases) for new versions
+2. Download the latest installer for your platform
+3. Install the new version (it will replace the old one)
+
+<Note>
+Your project files and custom settings are preserved during updates.
+</Note>
+
+## Uninstalling OpenScreen
+
+### macOS
+Drag the OpenScreen app from Applications to Trash, then empty the Trash.
+
+### Windows
+Use the Windows uninstaller from Settings > Apps > Apps & features, find OpenScreen, and click Uninstall.
+
+### Linux
+Simply delete the AppImage file. To remove any configuration files:
+
+```bash
+rm -rf ~/.config/openscreen
+```
+
+## Next Steps
+
+Now that OpenScreen is installed, learn how to record and edit your first video in the [Quick Start](/quickstart) guide.

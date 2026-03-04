@@ -1,0 +1,318 @@
+---
+title: Export & Sharing
+description: Export your edited videos in multiple formats with quality presets optimized for different platforms
+---
+
+## Overview
+
+Open Screen supports exporting your edited videos in both MP4 and GIF formats with customizable quality settings. The export engine uses hardware-accelerated encoding when available for fast, high-quality output.
+
+## Starting an Export
+
+<Steps>
+  <Step title="Configure Settings">
+    Open the **Export** section in the settings panel to configure format and quality options.
+  </Step>
+  
+  <Step title="Choose Format">
+    Select either **MP4** (video) or **GIF** (animated image) as your export format.
+  </Step>
+  
+  <Step title="Click Export">
+    Click the "Export" button to begin the rendering process.
+  </Step>
+  
+  <Step title="Save Location">
+    Choose where to save your exported file using the system file picker.
+  </Step>
+</Steps>
+
+## MP4 Export
+
+Export high-quality video files suitable for YouTube, social media, or presentations.
+
+### Quality Presets
+
+<Tabs>
+  <Tab title="Medium (720p)">
+    - **Resolution**: 1280×720
+    - **Frame Rate**: 60fps
+    - **Bitrate**: 10 Mbps
+    - **Use Case**: General sharing, social media
+    - **File Size**: ~75 MB per minute
+  </Tab>
+  
+  <Tab title="Good (1080p)">
+    - **Resolution**: 1920×1080
+    - **Frame Rate**: 60fps
+    - **Bitrate**: 20 Mbps
+    - **Use Case**: YouTube, professional sharing
+    - **File Size**: ~150 MB per minute
+  </Tab>
+  
+  <Tab title="Source Quality">
+    - **Resolution**: Original recording resolution
+    - **Frame Rate**: 60fps
+    - **Bitrate**: 30-80 Mbps (adaptive)
+    - **Use Case**: Archival, editing in other tools
+    - **File Size**: ~225-600 MB per minute
+  </Tab>
+</Tabs>
+
+### Video Codec
+
+All MP4 exports use:
+
+- **Codec**: H.264 (AVC)
+- **Profile**: High Profile
+- **Container**: MP4
+- **Color Space**: BT.709 (sRGB)
+- **Bitrate Mode**: Variable (VBR)
+
+<Info>
+H.264 provides excellent compatibility across all platforms and devices while maintaining high quality at reasonable file sizes.
+</Info>
+
+### Aspect Ratio Handling
+
+The export respects your selected aspect ratio:
+
+- **16:9** - Standard widescreen, maintains original proportions
+- **1:1** - Square, optimal dimensions calculated for the selected quality
+- **9:16** - Vertical/portrait, ideal for mobile platforms
+- **4:3** - Classic format
+- **21:9** - Ultra-wide cinematic
+
+Dimensions are automatically calculated to maintain even pixel counts and exact aspect ratios.
+
+## GIF Export
+
+Create animated GIFs perfect for documentation, sharing on messaging platforms, or embedding on web pages.
+
+### GIF Size Presets
+
+<Tabs>
+  <Tab title="Small (480p)">
+    - **Max Height**: 480px
+    - **Width**: Calculated from aspect ratio
+    - **Use Case**: Quick previews, email
+    - **File Size**: Smallest
+  </Tab>
+  
+  <Tab title="Medium (720p)">
+    - **Max Height**: 720px (default)
+    - **Width**: Calculated from aspect ratio
+    - **Use Case**: General sharing, documentation
+    - **File Size**: Moderate
+  </Tab>
+  
+  <Tab title="Large (1080p)">
+    - **Max Height**: 1080px
+    - **Width**: Calculated from aspect ratio
+    - **Use Case**: High-quality demos
+    - **File Size**: Larger
+  </Tab>
+  
+  <Tab title="Original">
+    - **Dimensions**: Source video resolution
+    - **Use Case**: Maximum quality preservation
+    - **File Size**: Largest
+  </Tab>
+</Tabs>
+
+### GIF Frame Rates
+
+Choose frame rate to balance smoothness and file size:
+
+- **10 FPS** - Smaller files, slightly choppy
+- **15 FPS** - Recommended default, good balance
+- **20 FPS** - Smoother animation, larger files
+- **25 FPS** - Very smooth, large files
+- **30 FPS** - Maximum smoothness, very large files
+
+<Note>
+Lower frame rates significantly reduce GIF file sizes. For screen recordings with minimal motion, 10-15 FPS is often sufficient.
+</Note>
+
+### GIF Loop Settings
+
+- **Loop Enabled** (default) - GIF plays infinitely
+- **Loop Disabled** - GIF plays once and stops
+
+### GIF Optimization
+
+All GIFs are exported with:
+
+- **Floyd-Steinberg dithering** - Better color quality
+- **Multi-threaded encoding** - Uses 4 worker threads for faster encoding
+- **Palette optimization** - Per-frame color palette for best quality
+
+<Warning>
+GIFs with long durations or large dimensions can result in very large file sizes (50-200 MB). Consider using MP4 for videos longer than 30 seconds.
+</Warning>
+
+## Export Process
+
+### Progress Tracking
+
+During export, you'll see real-time progress:
+
+- **Current Frame** / **Total Frames**
+- **Percentage Complete**
+- **Export Phase** (encoding, finalizing, or rendering for GIFs)
+
+### Hardware Acceleration
+
+The export engine attempts to use hardware acceleration:
+
+1. **First attempt**: Hardware-accelerated encoding (H.264)
+2. **Fallback**: Software encoding if hardware unavailable
+3. **Detection**: Automatic capability detection on export start
+
+<Info>
+Hardware acceleration can make exports 2-5× faster depending on your GPU. Modern Intel, NVIDIA, and AMD GPUs all support H.264 hardware encoding.
+</Info>
+
+### Canceling an Export
+
+During export:
+
+- Click **Cancel** in the export dialog
+- The export process stops immediately
+- No partial file is saved
+- You can adjust settings and try again
+
+## Effect Rendering
+
+All effects are rendered during export:
+
+### Rendered Elements
+
+- ✅ Wallpaper backgrounds
+- ✅ Shadows and blur
+- ✅ Border radius and padding
+- ✅ Zoom regions with smooth transitions
+- ✅ Annotations (text, images, arrows)
+- ✅ Cropping
+- ✅ Speed adjustments
+- ✅ Motion blur (if enabled)
+
+### Trim Region Handling
+
+- Trimmed sections are completely removed
+- Timeline is seamlessly stitched together
+- Speed regions are respected within remaining content
+- Export duration reflects all trims and speed changes
+
+## File Naming
+
+Exported files use timestamp-based naming:
+
+- **Format**: `export-{timestamp}.mp4` or `export-{timestamp}.gif`
+- **Timestamp**: Unix timestamp in milliseconds
+- **Default Location**: Your Downloads folder
+- **Custom Name**: Rename during save dialog
+
+## Export Quality Tips
+
+<Accordion title="Choose the right format">
+**MP4** for:
+- Videos longer than 30 seconds
+- When audio is important (future feature)
+- Professional sharing (YouTube, Vimeo)
+- Archival/editing
+
+**GIF** for:
+- Quick demos (under 30 seconds)
+- Documentation without sound
+- Easy embedding in markdown/websites
+- Compatibility without video players
+</Accordion>
+
+<Accordion title="Optimize for platform">
+- **YouTube**: MP4, Good quality (1080p)
+- **Twitter**: MP4, Medium quality (720p), under 512 MB
+- **Instagram Feed**: MP4, 1:1 aspect ratio, Good quality
+- **Instagram Stories**: MP4, 9:16 aspect ratio, Medium quality
+- **Documentation**: GIF, Medium size (720p), 15 FPS
+- **Email**: GIF, Small size (480p), 10 FPS
+</Accordion>
+
+<Accordion title="Balance quality and file size">
+- Start with default settings (Good quality, Medium GIF size)
+- Preview export file size estimates
+- Adjust resolution/frame rate if file too large
+- Use trim regions to remove unnecessary content
+- Consider platform upload limits
+</Accordion>
+
+## Export Performance
+
+### Expected Export Times
+
+For a 60-second video on modern hardware:
+
+| Quality | Hardware Encoding | Software Encoding |
+|---------|------------------|-------------------|
+| Medium (720p) | 15-30 seconds | 60-120 seconds |
+| Good (1080p) | 30-60 seconds | 120-240 seconds |
+| Source Quality | 60-120 seconds | 240-480 seconds |
+| GIF (Medium) | 90-180 seconds | 90-180 seconds |
+
+<Note>
+Export times vary based on CPU/GPU, video complexity, and enabled effects. Motion blur and complex annotations increase rendering time.
+</Note>
+
+### Optimizing Export Speed
+
+- **Use hardware encoding** - Ensure GPU drivers are up to date
+- **Close other applications** - Free up CPU/GPU resources
+- **Disable unnecessary effects** - Motion blur impacts export time
+- **Choose appropriate quality** - Source quality takes longest
+- **Trim aggressively** - Remove content you don't need
+
+## Troubleshooting
+
+<Accordion title="Export fails immediately">
+**Possible causes**:
+- Insufficient disk space
+- Video file permissions issues
+- Codec not supported on system
+
+**Solutions**:
+- Check available disk space (need 2-3× final file size)
+- Ensure video file is accessible
+- Try different quality preset
+- Restart Open Screen
+</Accordion>
+
+<Accordion title="GIF file size too large">
+**Solutions**:
+- Reduce frame rate to 10-15 FPS
+- Choose smaller size preset (Medium or Small)
+- Trim video to shorter duration
+- Consider using MP4 instead for long content
+</Accordion>
+
+<Accordion title="Export takes very long">
+**Solutions**:
+- Check if hardware acceleration is active (shown in logs)
+- Update GPU drivers
+- Reduce export quality/resolution
+- Close background applications
+- Disable motion blur effect
+</Accordion>
+
+## Post-Export
+
+After export completes:
+
+- File is saved to your chosen location
+- A success notification appears
+- Click the notification to reveal file in Finder/Explorer
+- Video remains loaded in editor for further adjustments
+- Export again with different settings if needed
+
+<Info>
+Project files remain separate from exports. Save your project to preserve all edit settings for future changes.
+</Info>

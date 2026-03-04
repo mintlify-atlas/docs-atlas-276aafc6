@@ -1,97 +1,237 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: Open Screen Documentation
+mode: custom
 ---
 
-## Setting up
+<div className="relative overflow-hidden dark:bg-[#0f1117] bg-white">
+  {/* Hero Section */}
+  <div className="relative py-20 px-4 sm:px-6 lg:px-8" style={{background: 'linear-gradient(135deg, #151515 0%, #066d20 100%)'}}>
+    <div className="max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="lg:col-span-7">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Create Stunning Screen Recordings
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mb-8">
+            Free, open-source screen recording tool for creating beautiful product demos and walkthroughs. No watermarks, no subscriptions, unlimited recordings.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a 
+              href="/quickstart" 
+              className="inline-flex items-center px-6 py-3 rounded-lg font-semibold transition-colors"
+              style={{backgroundColor: '#06af38', color: 'white'}}
+            >
+              Get Started
+            </a>
+            <a 
+              href="/installation" 
+              className="inline-flex items-center px-6 py-3 rounded-lg font-semibold border border-white/30 bg-white/10 text-white hover:bg-white/20 transition-colors"
+            >
+              Download Now
+            </a>
+          </div>
+        </div>
+        <div className="lg:col-span-5 flex justify-center">
+          <img 
+            src="/logo.png" 
+            alt="Open Screen Logo" 
+            noZoom
+            className="w-64 h-64 object-contain"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 
-Get your documentation site up and running in minutes.
+  {/* Quick Start Section */}
+  <div className="mt-16 mb-16 max-w-5xl mx-auto px-6">
+    <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white mb-4">
+      Quick Start
+    </h2>
+    <p className="text-base text-gray-600 dark:text-gray-400 mb-8">
+      Get started with Open Screen in minutes
+    </p>
+    
+    <Steps>
+      <Step title="Download and Install">
+        Download the latest release for your platform from the [GitHub Releases](https://github.com/siddharthvaddem/openscreen/releases) page. Available for macOS, Windows, and Linux.
+        
+        ```bash macOS
+        xattr -rd com.apple.quarantine /Applications/Openscreen.app
+        ```
+      </Step>
+      
+      <Step title="Grant Permissions">
+        Open System Settings and grant screen recording and accessibility permissions when prompted. These are required for Open Screen to capture your screen.
+      </Step>
+      
+      <Step title="Start Recording">
+        Launch Open Screen, select your screen or application window, and click the record button. Your recording will start after a 3-second countdown.
+      </Step>
+      
+      <Step title="Edit and Export">
+        Once finished, edit your recording with zooms, annotations, and effects. Export in your preferred format and resolution.
+      </Step>
+    </Steps>
+  </div>
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+  {/* Core Features Section */}
+  <div className="mt-16 mb-16 max-w-5xl mx-auto px-6">
+    <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white mb-4">
+      Core Features
+    </h2>
+    <p className="text-base text-gray-600 dark:text-gray-400 mb-8">
+      Everything you need to create professional screen recordings
+    </p>
+    
+    <CardGroup cols={2}>
+      <Card title="Screen Recording" icon="video" href="/features/recording">
+        Record your entire screen or specific application windows with high quality
+      </Card>
+      <Card title="Video Editing" icon="scissors" href="/features/editing">
+        Trim, crop, and customize your recordings with a powerful timeline editor
+      </Card>
+      <Card title="Zoom & Pan Effects" icon="magnifying-glass-plus" href="/features/effects">
+        Add smooth zoom animations with customizable depth and motion blur
+      </Card>
+      <Card title="Annotations" icon="pen" href="/features/annotations">
+        Add text, arrows, and images to highlight important areas
+      </Card>
+      <Card title="Custom Backgrounds" icon="palette" href="/features/effects">
+        Replace backgrounds with colors, gradients, or custom images
+      </Card>
+      <Card title="Multiple Formats" icon="file-export" href="/features/export">
+        Export to MP4, GIF, or WebM with various resolutions and aspect ratios
+      </Card>
+    </CardGroup>
+  </div>
 
-## Make it yours
+  {/* Explore by Topic Section */}
+  <div className="mt-16 mb-16 max-w-5xl mx-auto px-6">
+    <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white mb-4">
+      Explore by Topic
+    </h2>
+    <p className="text-base text-gray-600 dark:text-gray-400 mb-8">
+      Dive deeper into Open Screen's capabilities
+    </p>
+    
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <a href="/guides/creating-demos" className="group block rounded-2xl border dark:border-[#27272a] border-gray-200 hover:border-[#06af38] dark:hover:border-[#06af38] overflow-hidden transition-colors no-underline dark:bg-[#1a1d27] bg-gray-50">
+        <div className="p-6">
+          <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-2">
+            Creating Product Demos
+          </h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            Learn best practices for creating engaging product demos and walkthroughs
+          </p>
+          <span className="text-sm font-medium group-hover:text-[#06af38] text-gray-900 dark:text-white transition-colors inline-flex items-center">
+            Read guide
+            <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </span>
+        </div>
+      </a>
+      
+      <a href="/guides/advanced-editing" className="group block rounded-2xl border dark:border-[#27272a] border-gray-200 hover:border-[#06af38] dark:hover:border-[#06af38] overflow-hidden transition-colors no-underline dark:bg-[#1a1d27] bg-gray-50">
+        <div className="p-6">
+          <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-2">
+            Advanced Editing Techniques
+          </h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            Master timeline editing, keyframes, and advanced effects
+          </p>
+          <span className="text-sm font-medium group-hover:text-[#06af38] text-gray-900 dark:text-white transition-colors inline-flex items-center">
+            Read guide
+            <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </span>
+        </div>
+      </a>
+      
+      <a href="/reference/keyboard-shortcuts" className="group block rounded-2xl border dark:border-[#27272a] border-gray-200 hover:border-[#06af38] dark:hover:border-[#06af38] overflow-hidden transition-colors no-underline dark:bg-[#1a1d27] bg-gray-50">
+        <div className="p-6">
+          <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-2">
+            Keyboard Shortcuts
+          </h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            Complete reference of customizable keyboard shortcuts
+          </p>
+          <span className="text-sm font-medium group-hover:text-[#06af38] text-gray-900 dark:text-white transition-colors inline-flex items-center">
+            View shortcuts
+            <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </span>
+        </div>
+      </a>
+      
+      <a href="/reference/troubleshooting" className="group block rounded-2xl border dark:border-[#27272a] border-gray-200 hover:border-[#06af38] dark:hover:border-[#06af38] overflow-hidden transition-colors no-underline dark:bg-[#1a1d27] bg-gray-50">
+        <div className="p-6">
+          <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-2">
+            Troubleshooting
+          </h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            Common issues and solutions for Open Screen
+          </p>
+          <span className="text-sm font-medium group-hover:text-[#06af38] text-gray-900 dark:text-white transition-colors inline-flex items-center">
+            Get help
+            <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
 
-Design a docs site that looks great and empowers your users.
+  {/* Resources & Community Section */}
+  <div className="mt-16 mb-16 max-w-5xl mx-auto px-6">
+    <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white mb-4">
+      Resources & Community
+    </h2>
+    <p className="text-base text-gray-600 dark:text-gray-400 mb-8">
+      Get help and contribute to Open Screen
+    </p>
+    
+    <CardGroup cols={3}>
+      <Card title="Contributing" icon="code-branch" href="/community/contributing">
+        Learn how to contribute to Open Screen development
+      </Card>
+      <Card title="GitHub" icon="github" href="https://github.com/siddharthvaddem/openscreen">
+        View source code, report issues, and request features
+      </Card>
+      <Card title="FAQ" icon="question-circle" href="/reference/faq">
+        Find answers to frequently asked questions
+      </Card>
+    </CardGroup>
+  </div>
 
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
-  </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
-  </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
-
-## Create beautiful pages
-
-Everything you need to create world-class documentation.
-
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
-
-## Need inspiration?
-
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+  {/* Closing CTA Banner */}
+  <div className="mt-16 mb-16 max-w-5xl mx-auto px-6">
+    <div className="rounded-2xl border dark:border-[#27272a] border-gray-200 dark:bg-[#1a1d27] bg-gray-50 p-8 sm:p-12 text-center" style={{boxShadow: '0 4px 12px rgba(6, 175, 56, 0.15)'}}>
+      <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        Ready to create stunning recordings?
+      </h2>
+      <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
+        Download Open Screen and start creating professional screen recordings for free. No watermarks, no subscriptions, unlimited use.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="/installation" 
+          className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-colors"
+          style={{backgroundColor: '#06af38', color: 'white'}}
+        >
+          Download Open Screen
+        </a>
+        <a 
+          href="/quickstart" 
+          className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold border dark:border-[#27272a] border-gray-200 dark:bg-[#242838] bg-white dark:text-white text-gray-900 hover:dark:bg-[#2d3142] hover:bg-gray-100 transition-colors"
+        >
+          View Quickstart
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

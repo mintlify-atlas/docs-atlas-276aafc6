@@ -1,0 +1,245 @@
+---
+title: Annotations
+description: Add text, images, and arrows to highlight important moments in your recordings
+---
+
+## Overview
+
+Annotations allow you to add visual elements to your videos including text overlays, images, and directional arrows. Each annotation can be precisely positioned, timed, and styled.
+
+## Creating Annotations
+
+<Steps>
+  <Step title="Position Playhead">
+    Move the playhead to where you want the annotation to appear.
+  </Step>
+  
+  <Step title="Add Annotation">
+    Press **A** or click the annotation button in the timeline toolbar.
+  </Step>
+  
+  <Step title="Adjust Duration">
+    Drag the edges of the annotation region on the timeline to control visibility duration.
+  </Step>
+  
+  <Step title="Position & Resize">
+    Click and drag the annotation on the video preview to position it. Drag the corner handles to resize.
+  </Step>
+</Steps>
+
+## Annotation Types
+
+Open Screen supports three types of annotations:
+
+### Text Annotations
+
+Add styled text overlays to your video.
+
+<Tabs>
+  <Tab title="Content">
+    Enter your text in the content textarea. Text supports multi-line content and will wrap based on the annotation size.
+  </Tab>
+  
+  <Tab title="Font Styling">
+    Choose from 8 built-in font styles:
+    - **Classic** - System UI (sans-serif)
+    - **Editor** - Georgia (serif)
+    - **Strong** - Impact (bold)
+    - **Typewriter** - Courier New (monospace)
+    - **Deco** - Brush Script MT (cursive)
+    - **Simple** - Arial (sans-serif)
+    - **Modern** - Verdana (sans-serif)
+    - **Clean** - Trebuchet MS (sans-serif)
+    
+    Or add custom fonts from Google Fonts.
+  </Tab>
+  
+  <Tab title="Formatting">
+    - **Bold** - Make text bold
+    - **Italic** - Italicize text
+    - **Underline** - Add underline decoration
+    - **Alignment** - Left, center, or right align
+    - **Size** - Choose from 12px to 128px
+  </Tab>
+  
+  <Tab title="Colors">
+    - **Text Color** - Choose from 16 preset colors or use custom hex values
+    - **Background Color** - Add a colored background or keep transparent
+  </Tab>
+</Tabs>
+
+### Custom Fonts
+
+Add Google Fonts to use custom typography:
+
+<Steps>
+  <Step title="Open Font Dialog">
+    Click "Add Custom Font" in the annotation settings panel.
+  </Step>
+  
+  <Step title="Enter Font Name">
+    Type the exact Google Fonts name (e.g., "Roboto", "Playfair Display").
+  </Step>
+  
+  <Step title="Select Weights">
+    Choose which font weights to load (400, 700, etc.).
+  </Step>
+  
+  <Step title="Apply">
+    The font will be downloaded and available in your font dropdown.
+  </Step>
+</Steps>
+
+<Info>
+Custom fonts are stored locally and will be available for all future projects.
+</Info>
+
+### Image Annotations
+
+Overlay images on your video.
+
+<Steps>
+  <Step title="Switch to Image Type">
+    Select the "Image" tab in the annotation settings.
+  </Step>
+  
+  <Step title="Upload Image">
+    Click "Upload Image" and select a file from your computer.
+    
+    Supported formats:
+    - JPG/JPEG
+    - PNG
+    - GIF
+    - WebP
+  </Step>
+  
+  <Step title="Position & Scale">
+    Drag to position the image and resize using corner handles. Images maintain aspect ratio when resizing.
+  </Step>
+</Steps>
+
+<Note>
+Images are embedded as data URLs in the project file, so projects remain portable.
+</Note>
+
+### Arrow Annotations
+
+Add directional arrows to point at screen elements.
+
+<Tabs>
+  <Tab title="Direction">
+    Choose from 8 arrow directions:
+    - **Cardinal**: Up, Down, Left, Right
+    - **Diagonal**: Up-Right, Up-Left, Down-Right, Down-Left
+  </Tab>
+  
+  <Tab title="Styling">
+    - **Color** - Choose from preset colors or custom hex
+    - **Stroke Width** - Adjust thickness from 1-6px
+  </Tab>
+</Tabs>
+
+## Positioning & Sizing
+
+### Interactive Positioning
+
+Annotations can only be moved when selected:
+
+1. **Click** an annotation to select it (green border appears)
+2. **Drag** the annotation body to move it
+3. **Drag corner handles** to resize (only when selected)
+
+<Info>
+Annotations use percentage-based positioning (0-100%) so they scale correctly across different export resolutions.
+</Info>
+
+### Z-Index & Layering
+
+When multiple annotations overlap:
+
+- Annotations stack based on creation order
+- Selected annotations are automatically brought to front for editing
+- Use **Tab** to cycle through overlapping annotations
+- Use **Shift+Tab** to cycle backwards
+
+## Managing Multiple Annotations
+
+### Selecting Overlapping Annotations
+
+<Steps>
+  <Step title="Move Playhead">
+    Position the playhead in a section where multiple annotations overlap.
+  </Step>
+  
+  <Step title="Cycle Through">
+    Press **Tab** to cycle forward through overlapping annotations, or **Shift+Tab** to cycle backward.
+  </Step>
+  
+  <Step title="Edit">
+    The selected annotation will have a green border and can be moved/resized.
+  </Step>
+</Steps>
+
+<Note>
+Tab cycling only works when the playhead is within the time range where annotations overlap.
+</Note>
+
+### Timeline Organization
+
+All annotations appear on the "Annotation" row in the timeline:
+
+- **Text annotations** show a preview of the text content
+- **Image annotations** are labeled "Image"
+- Annotations can overlap in time (unlike zoom or trim regions)
+- Click any annotation on the timeline to select it
+
+## Color Palette
+
+Both text and arrows use the same color palette with 16 preset colors:
+
+- Red, Blue, Green, Yellow/Gold
+- Orange, Purple, Pink, Cyan
+- Deep Orange, Light Green, Amber, Brand Green
+- White, Black, Blue Grey, Brown
+
+Custom hex colors can also be entered directly.
+
+## Keyboard Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| **A** | Add annotation at playhead |
+| **Tab** | Cycle to next overlapping annotation |
+| **Shift+Tab** | Cycle to previous overlapping annotation |
+| **Delete/Backspace** | Delete selected annotation |
+
+<Warning>
+Tab navigation only works when you're **not** focused in a text input or textarea field.
+</Warning>
+
+## Export Behavior
+
+Annotations are rendered during export:
+
+- Text is rasterized at export resolution for crisp quality
+- Images are scaled appropriately for the output resolution
+- Arrows are rendered as vector graphics for sharpness
+- All positioning and sizing scales correctly to match the export dimensions
+
+## Best Practices
+
+<Accordion title="Use appropriate font sizes">
+Choose font sizes between 24-64px for 1080p exports. Smaller text may be hard to read, especially after compression.
+</Accordion>
+
+<Accordion title="Limit overlapping annotations">
+While multiple annotations can overlap, too many at once can look cluttered. Use timing to show annotations sequentially.
+</Accordion>
+
+<Accordion title="Use contrasting colors">
+Ensure text has good contrast with the video background. Add a background color if the video content makes text hard to read.
+</Accordion>
+
+<Accordion title="Keep arrows simple">
+Use arrows to point at specific UI elements. Consider using multiple arrow annotations with staggered timing rather than one complex annotation.
+</Accordion>

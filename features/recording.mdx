@@ -1,0 +1,98 @@
+---
+title: Screen Recording
+description: Capture your screen with high-quality video recording and cursor tracking
+---
+
+## Overview
+
+Open Screen provides professional screen recording capabilities with cursor telemetry tracking, allowing you to capture high-quality screencasts that can be edited and enhanced later.
+
+## Starting a Recording
+
+When you launch Open Screen, you'll be presented with a source selector to choose what you want to record.
+
+<Steps>
+  <Step title="Select Your Source">
+    Choose from available recording sources:
+    - **Full Screen** - Record your entire display
+    - **Window** - Record a specific application window
+    - **Display** - Select from multiple monitors
+  </Step>
+  
+  <Step title="Start Recording">
+    Click the record button to begin capturing your screen. Open Screen will automatically start tracking your cursor movements.
+  </Step>
+  
+  <Step title="Stop Recording">
+    Click the stop button when you're finished. Your recording will be automatically saved and opened in the editor.
+  </Step>
+</Steps>
+
+## Recording Features
+
+### Cursor Telemetry
+
+Open Screen captures cursor position data at 10Hz (100ms intervals) during recording. This telemetry data enables:
+
+- **Smart zoom suggestions** based on where you clicked or focused
+- **Cursor-aware editing** for highlighting important interactions
+- **Automatic focus detection** for AI-powered zoom recommendations
+
+<Info>
+Cursor telemetry data is stored alongside your video file as `.cursor.json` and contains normalized cursor positions (0-1 range) with timestamps.
+</Info>
+
+### Recording Quality
+
+All recordings are captured in WebM format with the following specifications:
+
+- **Format**: WebM container
+- **Resolution**: Native screen resolution
+- **Frame Rate**: Variable, optimized for screen content
+- **Storage**: Recordings are saved to your system's recordings directory
+
+<Note>
+The cursor telemetry sampling captures up to 1 hour of cursor data (36,000 samples max) to keep file sizes manageable.
+</Note>
+
+## Multiple Source Support
+
+Open Screen can capture from different source types:
+
+### Screen Capture
+Record your entire display with all windows and desktop elements visible.
+
+### Window Capture
+Focus on a specific application window. The recorder will track the selected window even if you move it.
+
+### Display Selection
+On multi-monitor setups, choose which display to record. The cursor telemetry will be normalized to the selected display's coordinate space.
+
+## After Recording
+
+Once your recording is complete:
+
+1. The video is automatically stored in the recordings directory
+2. Cursor telemetry data is saved as a companion file
+3. The video editor window opens with your recording loaded
+4. You can immediately start editing with all cursor data available for smart features
+
+<Warning>
+Make sure you have sufficient disk space before starting long recordings. A 10-minute 1080p recording typically uses 200-300MB of storage.
+</Warning>
+
+## Keyboard Shortcuts
+
+While the recorder is active:
+
+- Press the configured hotkey to **start/stop** recording (customizable in settings)
+- Use system recording indicators to monitor active recording status
+
+## Next Steps
+
+After recording, you can:
+
+- [Edit your video](/features/editing) with timeline-based tools
+- [Add annotations](/features/annotations) to highlight important moments
+- [Apply effects](/features/effects) like zoom, blur, and shadows
+- [Export your video](/features/export) in multiple formats

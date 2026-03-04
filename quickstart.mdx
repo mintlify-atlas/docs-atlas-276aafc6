@@ -1,80 +1,353 @@
 ---
-title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+title: Quick Start
+description: Record, edit, and export your first video with OpenScreen in minutes
 ---
 
-## Get started in three steps
+This guide will walk you through creating your first screen recording with OpenScreen, from launching the app to exporting a polished video. You'll learn the essential workflow and key features.
 
-Get your documentation site running locally and make your first customization.
+## Your First Recording
 
-### Step 1: Set up your local environment
-
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
+<Steps>
+  <Step title="Launch OpenScreen">
+    Open OpenScreen from your Applications folder, Start menu, or by running the AppImage.
     
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
+    The source selector window will appear, showing all available screens and application windows.
+  </Step>
+  
+  <Step title="Select your recording source">
+    Choose what you want to record:
     
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 2: Deploy your changes
-
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
+    - **Entire Screen** - Capture everything on your monitor
+    - **Specific Window** - Record a single application (recommended for focused demos)
     
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
+    Click on the source you want to record to select it.
+    
+    <Info>
+    Recording a specific window gives you cleaner results and better performance than recording the entire screen.
+    </Info>
+  </Step>
+  
+  <Step title="Start recording">
+    Click the **Record** button to begin capturing.
+    
+    OpenScreen will start recording immediately. A recording indicator will appear in your system tray showing that recording is in progress.
+    
+    <Note>
+    Perform your actions naturally. You'll be able to trim, zoom, and enhance the video in the editor.
+    </Note>
+  </Step>
+  
+  <Step title="Stop recording">
+    When you're done, stop the recording by:
+    
+    - Clicking the **Stop** button in the system tray
+    - Using the keyboard shortcut (if configured)
+    
+    OpenScreen will automatically process your recording and open it in the video editor.
+  </Step>
+</Steps>
 
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
+## Editing Your Video
 
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
-  </Accordion>
-</AccordionGroup>
+Once recording stops, the video editor opens with your footage ready to enhance.
 
-### Step 3: Go live
+### Understanding the Editor Interface
 
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
+The video editor has three main areas:
 
-## Next steps
+- **Preview window** (center) - Watch your video with real-time effects
+- **Timeline** (bottom) - Edit timing, add zooms, annotations, and trims
+- **Settings panel** (right) - Customize backgrounds, effects, and export options
 
-Now that you have your docs running, explore these key features:
+### Adding Zoom Effects
 
-<CardGroup cols={2}>
+Zoom effects help focus attention on important parts of your recording.
 
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
-</Card>
+<Steps>
+  <Step title="Position the playhead">
+    Drag the playhead (red vertical line) on the timeline to where you want the zoom to start.
+  </Step>
+  
+  <Step title="Add a zoom region">
+    Right-click on the Zoom track in the timeline and select **Add Zoom** (or use the keyboard shortcut).
+    
+    A zoom region appears on the timeline.
+  </Step>
+  
+  <Step title="Adjust zoom duration">
+    Drag the edges of the zoom region to control how long the zoom lasts.
+  </Step>
+  
+  <Step title="Set zoom depth">
+    With the zoom region selected, use the **Zoom Depth** slider in the settings panel to choose magnification:
+    
+    - **1.25×** - Subtle emphasis
+    - **1.5×** - Gentle zoom
+    - **1.8×** - Moderate zoom (default)
+    - **2.2×** - Strong zoom
+    - **3.5×** - Very close
+    - **5×** - Maximum magnification
+  </Step>
+  
+  <Step title="Position the zoom focus">
+    Click on the preview window where you want the zoom to center. The zoom will smoothly transition to focus on that area.
+  </Step>
+</Steps>
 
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
-</Card>
+<Info>
+OpenScreen applies smooth motion blur to zoom transitions automatically, creating professional-looking movement.
+</Info>
 
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
-</Card>
+### Customizing the Background
 
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
-</Card>
+Replace your boring desktop with a beautiful background.
 
-</CardGroup>
+<Steps>
+  <Step title="Open the Style tab">
+    In the settings panel, click the **Style** tab.
+  </Step>
+  
+  <Step title="Choose a background type">
+    Select from four background options:
+    
+    - **Wallpapers** - 18 pre-designed backgrounds
+    - **Gradients** - 24 colorful gradient options
+    - **Solid Color** - Pick any solid color using the color picker
+    - **Custom Image** - Upload your own background image
+  </Step>
+  
+  <Step title="Adjust window styling">
+    Customize how your recorded window looks:
+    
+    - **Shadow Intensity** - Add depth with shadows (0-100)
+    - **Border Radius** - Round the corners (0-50px)
+    - **Padding** - Control spacing around the window (0-200px)
+    - **Blur** - Apply background blur for depth of field
+  </Step>
+</Steps>
+
+### Adding Annotations
+
+Annotations help highlight important information in your video.
+
+<Steps>
+  <Step title="Position the playhead">
+    Move to where you want the annotation to appear.
+  </Step>
+  
+  <Step title="Add an annotation">
+    Right-click the Annotations track and select **Add Annotation**.
+  </Step>
+  
+  <Step title="Choose annotation type">
+    In the settings panel, select:
+    
+    - **Text** - Add labels, callouts, or explanations
+    - **Arrow** - Point to specific UI elements (8 directions available)
+    - **Image** - Insert custom graphics or icons
+  </Step>
+  
+  <Step title="Customize the annotation">
+    For text annotations:
+    - Enter your text content
+    - Choose font family, size, and weight
+    - Set text color and background color
+    - Adjust alignment (left, center, right)
+    
+    For arrows:
+    - Pick direction (up, down, left, right, or diagonals)
+    - Choose color and stroke width
+    
+    For images:
+    - Upload your image file
+  </Step>
+  
+  <Step title="Position and resize">
+    Drag the annotation in the preview window to position it, then drag the corners to resize.
+  </Step>
+</Steps>
+
+### Trimming Unwanted Sections
+
+Remove mistakes or dead time from your recording.
+
+<Steps>
+  <Step title="Find the section to trim">
+    Scrub through your video to identify unwanted sections.
+  </Step>
+  
+  <Step title="Add a trim region">
+    Right-click on the Trim track and select **Add Trim**.
+  </Step>
+  
+  <Step title="Set trim boundaries">
+    Drag the edges of the trim region to mark exactly what to remove. The trimmed section will be cut from the final export.
+  </Step>
+</Steps>
+
+<Warning>
+Trimmed sections are permanently removed from exports but don't affect your original recording file.
+</Warning>
+
+### Cropping the Video
+
+Hide parts of your screen you don't want to show.
+
+<Steps>
+  <Step title="Open crop settings">
+    Click the **Crop** button in the toolbar or settings panel.
+  </Step>
+  
+  <Step title="Adjust crop region">
+    In the preview window, drag the crop handles to define the visible area. Everything outside this region will be hidden.
+  </Step>
+  
+  <Step title="Fine-tune with controls">
+    Use the numeric controls in the settings panel for precise cropping:
+    - X position
+    - Y position
+    - Width
+    - Height
+  </Step>
+</Steps>
+
+### Adjusting Playback Speed
+
+Speed up or slow down sections of your video.
+
+<Steps>
+  <Step title="Add a speed region">
+    Position the playhead, right-click the Speed track, and select **Add Speed Change**.
+  </Step>
+  
+  <Step title="Choose speed">
+    Select from 7 speed options:
+    - **0.25×** - Very slow
+    - **0.5×** - Half speed
+    - **0.75×** - Slightly slow
+    - **1.25×** - Slightly fast
+    - **1.5×** - Medium fast (default)
+    - **1.75×** - Fast
+    - **2×** - Double speed
+  </Step>
+  
+  <Step title="Set duration">
+    Drag the edges of the speed region to control which section plays at the modified speed.
+  </Step>
+</Steps>
+
+## Exporting Your Video
+
+Once you're happy with your edits, export the final video.
+
+<Steps>
+  <Step title="Choose export format">
+    In the **Export** tab of the settings panel, select your format:
+    
+    - **MP4** - Standard video format (recommended)
+    - **GIF** - Animated image for web sharing
+  </Step>
+  
+  <Step title="Configure MP4 settings" if="format === MP4">
+    For MP4 exports:
+    
+    - **Aspect Ratio** - Choose 16:9, 9:16 (vertical), 1:1 (square), 4:3, 21:9, or custom
+    - **Quality** - Select Medium, Good, or Source (highest)
+    
+    <Info>
+    **Source quality** maintains your original recording quality but creates larger files. **Good quality** offers the best balance.
+    </Info>
+  </Step>
+  
+  <Step title="Configure GIF settings" if="format === GIF">
+    For GIF exports:
+    
+    - **Frame Rate** - 15, 20, 25, or 30 FPS (higher = smoother but larger)
+    - **Size Preset** - Medium (720p), Large (1080p), or Original
+    - **Loop** - Enable to make the GIF loop continuously
+    
+    <Warning>
+    GIFs create much larger files than MP4s. Use lower frame rates and smaller sizes for web sharing.
+    </Warning>
+  </Step>
+  
+  <Step title="Start export">
+    Click the **Export** button at the bottom of the settings panel.
+    
+    OpenScreen will show a progress dialog while rendering your video with all effects applied.
+  </Step>
+  
+  <Step title="Save the file">
+    When export completes, choose where to save your video. The file is ready to share!
+  </Step>
+</Steps>
+
+## Saving and Loading Projects
+
+Save your work to continue editing later.
+
+### Saving a Project
+
+1. Click the **Save Project** button (floppy disk icon) in the toolbar
+2. Choose a location and name for your project file
+3. OpenScreen saves all your edits, settings, and timeline data
 
 <Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
+Project files don't include the original video - they only store edit information. Keep your recording file in the same location.
 </Note>
+
+### Loading a Project
+
+1. Click the **Load Project** button (folder icon) in the toolbar
+2. Select your saved project file
+3. OpenScreen restores all your edits exactly as you left them
+
+## Keyboard Shortcuts
+
+Speed up your workflow with keyboard shortcuts:
+
+- **Space** - Play/Pause
+- **Left/Right Arrow** - Step forward/backward one frame
+- **Home** - Jump to start
+- **End** - Jump to end
+- **Delete** - Remove selected timeline item
+
+To view all shortcuts or customize them, click the **Keyboard Shortcuts** button (keyboard icon) in the toolbar.
+
+## Tips for Better Videos
+
+<Card title="Plan your recording" icon="lightbulb">
+Outline what you'll demonstrate before recording. This reduces editing time and creates smoother content.
+</Card>
+
+<Card title="Use zooms sparingly" icon="search">
+Only zoom to highlight important actions. Too many zooms can be distracting.
+</Card>
+
+<Card title="Match your aspect ratio to the platform" icon="aspect-ratio">
+- 16:9 for YouTube, tutorials, and presentations
+- 9:16 for Instagram Stories, TikTok, and mobile
+- 1:1 for Instagram feed and Twitter
+</Card>
+
+<Card title="Test your export settings" icon="settings">
+Export a short section first to check quality and file size before rendering the full video.
+</Card>
+
+<Card title="Keep backgrounds simple" icon="palette">
+Solid colors or subtle gradients work better than busy wallpapers for professional demos.
+</Card>
+
+## Next Steps
+
+You've learned the basics of OpenScreen! Here are some ways to continue:
+
+- Experiment with different background styles and effects
+- Try combining multiple zoom levels in one video
+- Explore annotation styling options for branded content
+- Check the [GitHub issues](https://github.com/siddharthvaddem/openscreen/issues) to report bugs or request features
+- Contribute to the project if you're a developer
+
+<Info>
+Join the OpenScreen community on GitHub to share your creations, get help, and suggest improvements!
+</Info>

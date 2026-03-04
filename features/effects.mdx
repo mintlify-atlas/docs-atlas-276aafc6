@@ -1,0 +1,244 @@
+---
+title: Visual Effects
+description: Enhance your videos with professional visual effects including backgrounds, shadows, blur, and more
+---
+
+## Overview
+
+Open Screen provides a suite of visual effects to give your recordings a polished, professional appearance. All effects are applied in real-time during export with hardware acceleration support.
+
+## Background Wallpapers
+
+Add aesthetic backgrounds to frame your recording instead of a plain color.
+
+### Using Wallpapers
+
+1. Open the **Effects** panel on the right side
+2. Browse through available wallpaper options
+3. Click a wallpaper to apply it instantly
+4. The video preview updates in real-time
+
+<Info>
+Wallpapers are rendered behind your video content with automatic scaling and positioning to match your export resolution.
+</Info>
+
+### Wallpaper Library
+
+Open Screen includes built-in gradient wallpapers:
+
+- Gradient backgrounds in various color schemes
+- Optimized for different aspect ratios
+- Located in the `assets/wallpapers/` directory
+- Custom wallpapers can be added to the assets folder
+
+## Shadow Effects
+
+Add depth to your video with customizable drop shadows.
+
+### Shadow Settings
+
+<Steps>
+  <Step title="Enable Shadow">
+    Adjust the shadow intensity slider from 0 (no shadow) to 100 (maximum shadow).
+  </Step>
+  
+  <Step title="Preview">
+    The video preview shows the shadow effect in real-time.
+  </Step>
+  
+  <Step title="Export">
+    Shadows are rendered during export, adding a subtle depth effect around your video.
+  </Step>
+</Steps>
+
+<Tabs>
+  <Tab title="Shadow Intensity">
+    - **0** - No shadow (disabled)
+    - **1-30** - Subtle shadow for light backgrounds
+    - **31-70** - Medium shadow (recommended)
+    - **71-100** - Strong shadow for dramatic effect
+  </Tab>
+  
+  <Tab title="Shadow Rendering">
+    Shadows are rendered as WebGL effects with:
+    - Soft gaussian blur
+    - Automatic color adjustment based on background
+    - Optimized performance with GPU acceleration
+  </Tab>
+</Tabs>
+
+## Background Blur
+
+Apply blur to the background wallpaper for a modern, focused look.
+
+### Blur Settings
+
+- **Toggle** - Enable/disable background blur
+- **Effect** - Applies a gaussian blur to the wallpaper behind your video
+- **Use Case** - Creates depth of field, making your video content stand out
+
+<Note>
+Background blur only affects the wallpaper, not your video content. Your recording remains sharp and clear.
+</Note>
+
+## Motion Blur
+
+Add cinematic motion blur to smooth fast movements.
+
+### How Motion Blur Works
+
+- **Enable** - Toggle motion blur in the effects panel
+- **Rendering** - Applied during export to frames with rapid movement
+- **Performance** - Uses GPU acceleration for efficient processing
+
+<Warning>
+Motion blur increases export time as it requires additional frame processing. Use it selectively for best results.
+</Warning>
+
+## Border Radius
+
+Round the corners of your video for a modern aesthetic.
+
+### Border Radius Settings
+
+- **Range** - 0 to 48 pixels
+- **0** - Sharp corners (default)
+- **8-16** - Subtle rounding
+- **24-48** - Pronounced rounded corners
+
+<Accordion title="Recommended border radius values">
+- **1080p exports**: 12-24px
+- **720p exports**: 8-16px
+- **4K exports**: 24-48px
+
+Scale the radius based on your output resolution for consistent appearance.
+</Accordion>
+
+## Padding
+
+Control the spacing between your video and the edges/background.
+
+### Padding Settings
+
+- **Range** - 0 to 200 pixels
+- **0** - Video fills the entire frame
+- **50** - Default, comfortable spacing
+- **100-200** - Large padding for background emphasis
+
+<Info>
+Padding creates space around your video where the wallpaper or background color is visible. Combine with shadows for a floating video effect.
+</Info>
+
+## Combining Effects
+
+Effects work together to create professional-looking videos:
+
+### Recommended Effect Combinations
+
+<Tabs>
+  <Tab title="Modern & Clean">
+    - Gradient wallpaper
+    - Shadow intensity: 40
+    - Background blur: On
+    - Border radius: 16px
+    - Padding: 60px
+  </Tab>
+  
+  <Tab title="Minimal">
+    - Solid color background
+    - Shadow intensity: 20
+    - Background blur: Off
+    - Border radius: 8px
+    - Padding: 40px
+  </Tab>
+  
+  <Tab title="Dramatic">
+    - Dark gradient wallpaper
+    - Shadow intensity: 80
+    - Background blur: On
+    - Border radius: 24px
+    - Padding: 80px
+  </Tab>
+  
+  <Tab title="No Effects">
+    - No wallpaper (transparent)
+    - Shadow intensity: 0
+    - Background blur: Off
+    - Border radius: 0px
+    - Padding: 0px
+    
+    Results in just your raw video content.
+  </Tab>
+</Tabs>
+
+## Real-Time Preview
+
+All effects update in real-time in the editor:
+
+- **Instant feedback** - See effects as you adjust settings
+- **Scrub through timeline** - Effects visible during timeline scrubbing
+- **Playback** - Effects render during video playback
+
+<Note>
+Preview quality is optimized for performance. Final export will render effects at full quality.
+</Note>
+
+## Performance Considerations
+
+### GPU Acceleration
+
+Open Screen uses WebGL for effect rendering:
+
+- **Hardware accelerated** - Utilizes your GPU for fast rendering
+- **Fallback support** - Software rendering available if GPU unavailable
+- **Optimized pipelines** - Effects are rendered in efficient batches
+
+### Effect Complexity
+
+Effect | Performance Impact
+-------|-------------------
+Wallpaper | Low
+Shadow | Low-Medium
+Background Blur | Medium
+Border Radius | Low
+Padding | Minimal
+Motion Blur | Medium-High
+
+<Warning>
+Enabling multiple high-impact effects may slow down export times, especially at 4K resolutions. Monitor export progress and adjust settings if needed.
+</Warning>
+
+## Export Quality
+
+Effects are rendered at full quality during export:
+
+- Shadows use high-quality gaussian blur
+- Wallpapers are scaled to match output resolution
+- Border radius is anti-aliased for smooth edges
+- All effects respect the selected export quality setting
+
+## Keyboard Shortcuts
+
+No direct keyboard shortcuts for effects, but you can:
+
+- Use **Tab** to navigate between effect controls
+- Use **Arrow keys** to adjust slider values
+- Use **Enter** to confirm changes
+
+## Best Practices
+
+<Accordion title="Match effects to content type">
+**Tutorials**: Minimal effects, focus on content clarity
+
+**Marketing videos**: Use shadows, blur, and wallpapers for polish
+
+**Demos**: Subtle effects that don't distract from the demonstration
+</Accordion>
+
+<Accordion title="Consider export resolution">
+Scale effect values (padding, border radius) based on your export resolution. What looks good at 720p may appear too small at 4K.
+</Accordion>
+
+<Accordion title="Preview before exporting">
+Always preview your full video with effects enabled before starting a long export to ensure the look matches your expectations.
+</Accordion>

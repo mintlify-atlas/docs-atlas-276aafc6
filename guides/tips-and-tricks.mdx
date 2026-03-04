@@ -1,0 +1,580 @@
+---
+title: 'Tips & Tricks'
+description: 'Productivity tips, keyboard shortcuts, workflow optimization, and expert techniques for Open Screen'
+---
+
+Maximize your efficiency with Open Screen through expert tips, hidden features, and workflow optimizations.
+
+## Keyboard Shortcuts Mastery
+
+### Essential Shortcuts
+
+Master these shortcuts for 10× faster editing:
+
+<AccordionGroup>
+  <Accordion title="Timeline Editing">
+    | Action | Windows/Linux | macOS |
+    |--------|---------------|-------|
+    | Add Zoom | Z | Z |
+    | Add Trim | T | T |
+    | Add Annotation | A | A |
+    | Add Speed | S | S |
+    | Add Keyframe | F | F |
+    | Delete Selected | Delete or Ctrl + D | Delete or ⌘ D |
+    | Play/Pause | Space | Space |
+    | Cycle Annotations | Tab | Tab |
+    | Cycle Backward | Shift + Tab | Shift + Tab |
+  </Accordion>
+  
+  <Accordion title="Timeline Navigation">
+    | Action | Windows/Linux | macOS |
+    |--------|---------------|-------|
+    | Zoom Timeline In | Ctrl + Scroll Up | ⌘ Scroll Up |
+    | Zoom Timeline Out | Ctrl + Scroll Down | ⌘ Scroll Down |
+    | Pan Timeline | Shift + Ctrl + Scroll | Shift + ⌘ Scroll |
+  </Accordion>
+  
+  <Accordion title="Project Management">
+    | Action | Windows/Linux | macOS |
+    |--------|---------------|-------|
+    | Save Project | File → Save | File → Save |
+    | Load Project | File → Load | File → Load |
+    | Export | Export Button | Export Button |
+  </Accordion>
+</AccordionGroup>
+
+### Custom Shortcut Configuration
+
+Personalize shortcuts to match your workflow:
+
+1. Click the **keyboard icon** in timeline toolbar
+2. Click any action to rebind
+3. Press your preferred key combination
+4. Conflicts are shown in red
+5. Click **Save** to apply
+
+<Tip>
+Keep related actions on nearby keys. For example, Z-T-A-S are all on the left hand for quick editing.
+</Tip>
+
+## Workflow Optimization
+
+### Speed Recording Setup
+
+Get recording faster:
+
+<Steps>
+  <Step title="Prepare recording environment template">
+    - Close unnecessary apps
+    - Set desktop background
+    - Position windows for recording
+    - Save as display arrangement (OS-level)
+  </Step>
+  
+  <Step title="Create recording checklist">
+    - [ ] Demo data prepared
+    - [ ] Browser tabs ready
+    - [ ] Audio/mic muted if screen-only
+    - [ ] Notifications disabled
+    - [ ] Desktop clean
+  </Step>
+  
+  <Step title="One-click recording">
+    - Open Screen starts in recording window
+    - Select source immediately
+    - Click Record
+    - 3-2-1 countdown begins
+  </Step>
+</Steps>
+
+### Editing Workflow Templates
+
+**First-Pass Edit (5 minutes):**
+1. Watch full video
+2. Add keyframes at mistakes
+3. Create trim regions
+4. Done
+
+**Second-Pass Polish (10 minutes):**
+1. Add zoom regions (manual or auto-suggest)
+2. Adjust zoom focus points
+3. Add speed regions for pacing
+4. Preview result
+
+**Third-Pass Enhancement (5 minutes):**
+1. Add annotations (titles, callouts)
+2. Style text/arrows
+3. Adjust background/effects
+4. Final preview and export
+
+<Info>
+Total edit time: ~20 minutes for a 2-3 minute video. Adjust based on complexity.
+</Info>
+
+### Batch Processing Videos
+
+Process multiple recordings efficiently:
+
+1. **Record all videos first** (don't edit between)
+2. **Create style template** (background, effects, aspect ratio)
+3. **Edit video 1** completely
+4. **Save as template**
+5. **Load template** for video 2
+6. **Swap video source** (if feature available) or recreate edits
+7. **Adjust timeline** for new content
+8. **Export**
+9. Repeat for remaining videos
+
+## Hidden Features
+
+### Auto-Suggest Zoom from Cursor
+
+Leverage cursor telemetry:
+
+**How It Works:**
+- Records cursor position during screencast
+- Analyzes dwell patterns (where cursor paused)
+- Creates zoom regions centered on cursor
+- Ranks by "strength" (dwell duration)
+
+**Best Results:**
+- Pause cursor on important UI elements (2-3 seconds)
+- Avoid rapid cursor movements
+- Review and adjust suggested zooms
+
+**When Not Available:**
+- External recordings (no telemetry)
+- Imported videos
+- Full-screen window captures (no cursor data)
+
+### Keyframe Navigation
+
+Playhead snaps to keyframes:
+
+- Drag playhead near keyframe (within 150ms)
+- Automatically snaps for precision
+- Useful for:
+  - Aligning multiple regions
+  - Consistent timing across edits
+  - Quick navigation to marked sections
+
+### Project Persistence
+
+All edits saved in project file:
+
+**What's Saved:**
+- Zoom regions (position, depth, focus)
+- Trim regions
+- Speed regions
+- Annotations (content, style, position)
+- Background and effects settings
+- Aspect ratio
+- Export settings
+- Keyframes
+
+**What's NOT Saved:**
+- Actual video file (reference path only)
+- Export history
+- Timeline zoom level
+- Playhead position
+
+<Note>
+Move project files and videos together. Project stores video path reference.
+</Note>
+
+## Productivity Power Moves
+
+### The 2-Key Edit
+
+Minimum viable editing:
+
+1. **T** - Trim mistakes
+2. **Z** - Add zooms
+3. Done in under 5 minutes
+
+### The Context Switch
+
+Quick annotation type changes:
+
+1. Select annotation
+2. Click **Text** / **Image** / **Arrow** tabs
+3. Previous content preserved per type
+4. Switch back anytime
+
+**Use Case:**
+- Start with text annotation
+- Switch to arrow for pointing
+- Switch back to text - original text returns
+
+### The Speed Stack
+
+Speed up entire video except important moments:
+
+1. Add speed region for entire video (2×)
+2. Add overlapping speed regions at 1× for important parts... wait, this won't work (no overlaps)
+
+**Better Approach:**
+1. Identify important moments (add keyframes)
+2. Add speed regions in gaps between keyframes
+3. Set gaps to 1.5× - 2×
+4. Leave important moments at normal speed
+5. Result: Fast-paced video with emphasis
+
+### The Template Library
+
+Create reusable templates:
+
+**Template Types:**
+- **Brand Template** - Logo, colors, background
+- **Tutorial Template** - Consistent styling for series
+- **Quick Share Template** - Optimized for social media
+- **Documentation Template** - Clean, minimal style
+
+**Organization:**
+```
+Projects/
+  Templates/
+    Brand-16x9.osproject
+    Brand-1x1.osproject
+    Tutorial-Style.osproject
+    Quick-GIF.osproject
+  Active/
+    demo-2024-03-04.osproject
+    tutorial-part-1.osproject
+```
+
+## Quality Optimization
+
+### Recording Quality Tips
+
+<AccordionGroup>
+  <Accordion title="Display Resolution">
+    **Best Practice:**
+    - Record at 1080p (1920×1080) or higher
+    - Use native screen resolution
+    - Avoid upscaling
+    
+    **Why:**
+    - Export can downscale without quality loss
+    - Cannot upscale without blur
+    - Source quality preserved
+  </Accordion>
+  
+  <Accordion title="Window Size">
+    **Best Practice:**
+    - Maximize window or use consistent size
+    - Avoid window resizing during recording
+    - Hide unnecessary UI (toolbars, sidebars)
+    
+    **Why:**
+    - Consistent framing
+    - Easier to crop
+    - Professional appearance
+  </Accordion>
+  
+  <Accordion title="Frame Rate">
+    **Best Practice:**
+    - Record at 60 fps for smooth motion
+    - Export maintains 60 fps
+    
+    **Why:**
+    - Smooth cursor movement
+    - Better for fast actions
+    - Professional quality
+  </Accordion>
+</AccordionGroup>
+
+### Export Quality Matrix
+
+**Choose export quality by use case:**
+
+| Use Case | Format | Quality | Aspect Ratio |
+|----------|--------|---------|-------------|
+| YouTube | MP4 | High | 16:9 |
+| Twitter | MP4 | Medium | 16:9 or 1:1 |
+| Instagram Post | MP4 | Medium | 1:1 |
+| Instagram Story | MP4 | Medium | 9:16 |
+| TikTok | MP4 | Medium | 9:16 |
+| Documentation | GIF | Medium 12fps | 16:9 |
+| Email Share | GIF | Small 10fps | 16:9 |
+| Help Article | MP4 | Medium | 4:3 or 16:9 |
+| Presentation | MP4 | High | 16:9 or 21:9 |
+
+## Time-Saving Techniques
+
+### The 80/20 Edit
+
+80% of impact from 20% of effort:
+
+**Focus on:**
+1. Remove obvious mistakes (trim)
+2. Add 2-3 strategic zooms
+3. Export
+
+**Skip:**
+- Perfect timing
+- Every possible zoom
+- Extensive annotations (unless critical)
+
+**Result:** Good-enough video in 5-10 minutes
+
+### Annotation Shortcuts
+
+**Quick Text Styling:**
+1. Create first annotation with full style
+2. Remember: "48px, Bold, White, Transparent"
+3. All future annotations: apply same style quickly
+4. No need to customize each time
+
+**Arrow Shortcuts:**
+- Most common: Right arrow, 4px stroke, green
+- Set once, reuse pattern
+- Consistent visual language
+
+### Export Presets (Mental Model)
+
+Memorize your go-to settings:
+
+**Preset 1: Quick Share**
+- MP4, Medium, 16:9
+- 40% shadow, 50% padding, 8px round
+- Gradient background
+
+**Preset 2: Documentation**
+- GIF, 12fps, Medium size, 16:9
+- White background, 30% shadow
+- Minimal padding
+
+**Preset 3: Social Square**
+- MP4, Medium, 1:1
+- 60% shadow, 60% padding, 12px round
+- Brand gradient
+
+## Common Mistakes to Avoid
+
+<Warning>
+**Don't:**
+- Add too many zooms (overwhelming)
+- Make trim regions too tight (jarring cuts)
+- Use maximum zoom everywhere (loses impact)
+- Forget to save project before experimenting
+- Export at Low quality for final deliverables
+</Warning>
+
+**Do:**
+- Use zoom sparingly for impact
+- Leave small padding on trim cuts
+- Vary zoom levels for visual hierarchy
+- Save project frequently
+- Preview before final export
+
+## Performance Optimization
+
+### Reduce Lag During Editing
+
+<Steps>
+  <Step title="Close other applications">
+    Free up CPU and RAM for Open Screen
+  </Step>
+  
+  <Step title="Zoom in timeline">
+    Renders fewer regions at once (faster)
+  </Step>
+  
+  <Step title="Disable motion blur for editing">
+    Enable only for final export (preview is faster)
+  </Step>
+  
+  <Step title="Reduce annotation count">
+    Limit to essential annotations (under 20-30)
+  </Step>
+</Steps>
+
+### Faster Exports
+
+**Draft Exports:**
+- Use Medium quality
+- Smaller aspect ratio (720p faster than 4K)
+- GIF for very short clips
+
+**Final Exports:**
+- Close preview during export
+- High quality uses all CPU cores
+- Ensure laptop is plugged in
+- Don't use computer during export for fastest speed
+
+## Advanced Tips
+
+### Cursor as Guide
+
+Use cursor intentionally during recording:
+
+**Technique:**
+- Pause cursor on important elements (2-3 seconds)
+- Circle cursor around key areas
+- Click slowly and deliberately
+
+**Benefit:**
+- Better auto-suggest zoom results
+- Visual guide for viewers
+- Natural emphasis
+
+### Annotation Layering
+
+Create visual hierarchy:
+
+**Layer 1 (Bottom):** Background shapes or colored boxes
+**Layer 2 (Middle):** Arrows pointing to elements
+**Layer 3 (Top):** Text labels
+
+**How:**
+1. Create annotations in order (bottom to top)
+2. Z-index automatically stacks by creation order
+3. Use Tab to select specific layers
+
+### Project as Timeline Save
+
+Non-destructive editing:
+
+- Original video never modified
+- All edits in project file
+- Try different styles on same recording
+- Export multiple versions
+- Always can revert to original
+
+## Platform-Specific Tips
+
+### YouTube Optimization
+
+- Aspect ratio: 16:9
+- Quality: High (source resolution)
+- Add text annotation: Title at start (3 seconds)
+- Add text annotation: Call-to-action at end (5 seconds)
+- Background: Professional or brand gradient
+- Export: MP4, High quality
+
+### Social Media Best Practices
+
+**Instagram:**
+- Post: 1:1, Medium, MP4, 60s max
+- Story: 9:16, Medium, MP4, 15s max
+- Reel: 9:16, Medium, MP4, 90s max
+- High contrast text (readable on mobile)
+- Large padding (60%) for breathing room
+
+**Twitter/X:**
+- 16:9 or 1:1
+- Medium quality
+- 2m 20s max
+- Captions/text annotations helpful (auto-mutes)
+
+**LinkedIn:**
+- 1:1 or 16:9
+- Medium quality
+- Professional background
+- Clear, large text
+- Logo annotation (top-right)
+
+### Documentation Integration
+
+**Help Articles:**
+- GIF format (auto-plays)
+- 12-15 fps
+- Medium size
+- Loop enabled
+- Under 10 seconds per GIF
+- White or light gray background
+
+**README Files:**
+- GIF format
+- 800px width max (fast loading)
+- 10 fps for smaller file size
+- Trim aggressively (show only key action)
+
+## Troubleshooting Quick Fixes
+
+<AccordionGroup>
+  <Accordion title="Export taking too long">
+    **Solutions:**
+    - Use Medium instead of High quality
+    - Reduce video length (trim more)
+    - Close other applications
+    - Check CPU usage (should be high during export)
+    - Disable motion blur if enabled
+  </Accordion>
+  
+  <Accordion title="Timeline feels slow">
+    **Solutions:**
+    - Zoom in timeline (fewer items rendered)
+    - Reduce annotation count
+    - Close preview window
+    - Restart Open Screen
+    - Check RAM usage
+  </Accordion>
+  
+  <Accordion title="Can't add zoom/trim region">
+    **Solutions:**
+    - Check for overlapping regions in same row
+    - Ensure enough space (minimum duration)
+    - Move playhead to empty area
+    - Delete or resize nearby regions
+  </Accordion>
+  
+  <Accordion title="Annotations not showing in export">
+    **Solutions:**
+    - Verify annotation time range includes video content
+    - Check annotation is not hidden behind video
+    - Ensure opacity is not 0%
+    - Preview before export to confirm visibility
+  </Accordion>
+</AccordionGroup>
+
+## Expert Workflows
+
+### The 3-Minute Edit Challenge
+
+How fast can you edit?
+
+**Minute 1: Cleanup**
+- Watch video at 2× speed
+- Add keyframes at mistakes
+- Create trim regions
+
+**Minute 2: Enhancement**
+- Click auto-suggest zooms
+- Adjust 2-3 key zoom focus points
+- Skip the rest
+
+**Minute 3: Export**
+- Set background (gradient)
+- 50% shadow, 50% padding
+- Export Medium MP4
+
+### The Template Sprint
+
+Create 5 templates in 15 minutes:
+
+1. **Minimal** (white, 0% shadow) - 2 min
+2. **Modern** (gradient, 50% shadow) - 3 min
+3. **Professional** (dark, 40% shadow) - 3 min
+4. **Social Square** (1:1, 60% padding) - 4 min
+5. **Vertical Story** (9:16, colorful) - 3 min
+
+Save all as templates for instant reuse.
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Keyboard Shortcuts Reference" icon="keyboard" href="/reference/keyboard-shortcuts">
+    Complete list of all keyboard shortcuts
+  </Card>
+  <Card title="Troubleshooting" icon="wrench" href="/reference/troubleshooting">
+    Common issues and solutions
+  </Card>
+  <Card title="Export Formats" icon="file-export" href="/reference/export-formats">
+    Detailed export format specifications
+  </Card>
+  <Card title="FAQ" icon="circle-question" href="/reference/faq">
+    Frequently asked questions
+  </Card>
+</CardGroup>
